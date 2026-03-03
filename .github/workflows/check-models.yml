@@ -1,0 +1,55 @@
+name: Check GitHub Copilot Models
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'  # Every Monday at 09:00 UTC
+  workflow_dispatch:      # Allow manual runs
+
+permissions:
+  contents: write  # Needed to commit data + pages updates and create releases
+
+jobs:
+  check-models:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95b21b72e566a14 # v5.5.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+
+      - name: Check for model changes
+        id: check
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+          GITHUB_SERVER_URL: ${{ github.server_url }}
+        run: |
+          python scripts/check_models.py
+          echo "release_notes_path=$(python3 -c 'import tempfile,os; print(os.path.join(tempfile.gettempdir(), \"release_notes.md\"))')" >> "$GITHUB_OUTPUT"
+
+      - name: Commit updated data and pages
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ docs/
+          git commit -m "chore: update model data and pages [skip ci]"
+          git push
+
+      - name: Create GitHub release
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.check.outputs.tag }}" \
+            --title "${{ steps.check.outputs.title }}" \
+            --notes-file "${{ steps.check.outputs.release_notes_path }}"
