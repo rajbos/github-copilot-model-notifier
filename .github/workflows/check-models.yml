@@ -23,11 +23,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Python dependencies
-        run: |
-          pip install playwright
-          playwright install chromium --with-deps
-
       - name: Check for model changes
         id: check
         env:

@@ -15,7 +15,9 @@
     .subscribe { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; margin: 20px 0; }
     .subscribe a { color: #0969da; }
     .rss-icon { color: #f26522; }
-    .notice { background: #ddf4ff; border: 1px solid #54aeff; border-radius: 6px; padding: 16px; margin: 20px 0; }
+    .change-item { border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; margin: 10px 0; }
+    .date { color: #656d76; font-size: 0.9em; margin: 4px 0; }
+    .updated { color: #656d76; font-size: 0.85em; }
     footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #d0d7de; color: #656d76; font-size: 0.85em; }
   </style>
 </head>
@@ -32,12 +34,9 @@
     </ul>
   </div>
 
-  <div class="notice">
-    &#x2139;&#xFE0F; This page will be automatically populated after the first workflow run.
-    Until then, visit <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Docs</a> for the current model list.
-  </div>
+  <p class="updated">Last updated: 2026-03-03 11:21 UTC &nbsp;|&nbsp; Source: <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Docs</a></p>
 
-  <h2>Current Models</h2>
+  <h2>Current Models (23)</h2>
   <table>
     <thead>
       <tr>
@@ -49,12 +48,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td colspan="5">No models found yet. The first workflow run will populate this page.</td></tr>
     </tbody>
   </table>
 
   <h2>Recent Changes</h2>
-  <p>No changes recorded yet.</p>
+  <div class="change-item">
+ 
+  </div>
 
   <footer>
     <p>This page is automatically updated by a
