@@ -27,6 +27,7 @@ _COMPARISON_API_URL = (
     "https://docs.github.com/api/article/body"
     "?pathname=/en/copilot/reference/ai-models/model-comparison"
 )
+_SUPPORTED_MODELS_HTML_URL = DOCS_URL
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.join(_SCRIPT_DIR, "..")
@@ -223,12 +224,83 @@ def _parse_comparison_page(md: str, existing: dict) -> dict:
     return models
 
 
+def _parse_html_tables(html: str) -> list[list[list[str]]]:
+    """Extract all ``<table>`` elements from *html* as lists of rows.
+
+    Each table is a list of rows, and each row is a list of cell texts
+    (from ``<th>`` and ``<td>`` elements).  HTML tags inside cells are
+    stripped; ``aria-label`` attributes on SVG icons are preserved as the
+    cell text (e.g. ``"Included"`` / ``"Not included"``).
+    """
+    tables: list[list[list[str]]] = []
+    for table_m in re.finditer(r"<table.*?</table>", html, re.DOTALL):
+        rows: list[list[str]] = []
+        for row_m in re.finditer(r"<tr.*?>(.*?)</tr>", table_m.group(), re.DOTALL):
+            cells: list[str] = []
+            for cell_m in re.finditer(
+                r"<(?:td|th)[^>]*>(.*?)</(?:td|th)>", row_m.group(1), re.DOTALL
+            ):
+                cell_html = cell_m.group(1)
+                # If the cell contains an SVG icon, use its aria-label
+                aria = re.search(r'aria-label="([^"]+)"', cell_html)
+                if aria:
+                    cells.append(aria.group(1))
+                else:
+                    # Strip remaining HTML tags and normalise whitespace
+                    cells.append(clean_text(re.sub(r"<[^>]+>", "", cell_html)))
+            if cells:
+                rows.append(cells)
+        if rows:
+            tables.append(rows)
+    return tables
+
+
+def _enrich_from_supported_models_html(html: str, models: dict) -> None:
+    """Update *models* in-place with release status and multiplier data.
+
+    Parses the rendered HTML of the supported-models page which contains
+    tables with release status and multiplier information that are not
+    available from the markdown API endpoints.
+    """
+    tables = _parse_html_tables(html)
+
+    for table in tables:
+        if not table:
+            continue
+        header = [h.lower() for h in table[0]]
+
+        # Release-status table: "model name | provider | release status | …"
+        if "release status" in header:
+            status_idx = header.index("release status")
+            for row in table[1:]:
+                name = row[0] if row else ""
+                if name in models and status_idx < len(row):
+                    models[name]["release_status"] = row[status_idx]
+
+        # Multiplier table: "model | multiplier for paid plans | multiplier for copilot free"
+        paid_col = next(
+            (i for i, h in enumerate(header) if "paid" in h), None
+        )
+        free_col = next(
+            (i for i, h in enumerate(header) if "free" in h), None
+        )
+        if paid_col is not None or free_col is not None:
+            for row in table[1:]:
+                name = row[0] if row else ""
+                if name in models:
+                    if paid_col is not None and paid_col < len(row):
+                        models[name]["multiplier_paid"] = row[paid_col]
+                    if free_col is not None and free_col < len(row):
+                        models[name]["multiplier_free"] = row[free_col]
+
+
 def scrape_models() -> dict:
     """Fetch model information from GitHub Docs API endpoints.
 
     Uses the model-hosting page as the primary source for providers, and the
-    model-comparison page to fill in any models not listed there.  Returns a
-    dict keyed by model name.
+    model-comparison page to fill in any models not listed there.  The
+    rendered supported-models HTML page is used to obtain release status
+    and multiplier data.  Returns a dict keyed by model name.
     """
     print("Fetching GitHub Docs model information…")
 
@@ -237,6 +309,9 @@ def scrape_models() -> dict:
 
     comparison_md = _fetch_text(_COMPARISON_API_URL)
     models = _parse_comparison_page(comparison_md, models)
+
+    supported_html = _fetch_text(_SUPPORTED_MODELS_HTML_URL)
+    _enrich_from_supported_models_html(supported_html, models)
 
     print(f"Extracted {len(models)} model(s)")
     return models
