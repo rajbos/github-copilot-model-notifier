@@ -510,6 +510,7 @@ def main() -> None:
         with open(release_notes_path, "w") as fh:
             fh.write(release_notes)
 
+        set_output("release_notes_path", release_notes_path)
         set_output("changed", "true")
         set_output("tag", tag)
         set_output("title", title)
