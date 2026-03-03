@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitHub Copilot Model Updates</title>
+    <link>https://rajbos.github.io/github-copilot-model-notifier</link>
+    <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
+    <language>en-us</language>
+    <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Tue, 03 Mar 2026 12:09:20 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-03-03</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-03-120920</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Claude Haiku 4.5 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Opus 4.5 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Opus 4.6 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Opus 4.6 (fast mode) (preview) (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Sonnet 4 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Sonnet 4.5 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: Claude Sonnet 4.6 (Provider: Anthropic)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-4.1 (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5 mini (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.1 (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.1-Codex (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.1-Codex-Max (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.1-Codex-Mini (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.2 (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.2-Codex (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: GPT-5.3-Codex (Provider: OpenAI)&lt;/li&gt;&lt;li&gt;**New model added**: Gemini 2.5 Pro (Provider: Google)&lt;/li&gt;&lt;li&gt;**New model added**: Gemini 3 Flash (Provider: Google)&lt;/li&gt;&lt;li&gt;**New model added**: Gemini 3 Pro (Provider: Google)&lt;/li&gt;&lt;li&gt;**New model added**: Gemini 3.1 Pro (Provider: Google)&lt;/li&gt;&lt;li&gt;**New model added**: Goldeneye (Provider: Microsoft)&lt;/li&gt;&lt;li&gt;**New model added**: Grok Code Fast 1 (Provider: xAI)&lt;/li&gt;&lt;li&gt;**New model added**: Raptor mini (Provider: Microsoft)&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 03 Mar 2026 12:09:20 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-03-120920</guid>
+    </item>
+  </channel>
+</rss>
