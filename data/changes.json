@@ -29,5 +29,36 @@
       "**New model added**: Grok Code Fast 1 (Provider: xAI)",
       "**New model added**: Raptor mini (Provider: Microsoft)"
     ]
+  },
+  {
+    "date": "2026-03-03 21:20 UTC",
+    "pub_date": "Tue, 03 Mar 2026 21:20:47 GMT",
+    "title": "Model Update: 2026-03-03",
+    "tag": "models-2026-03-03-212047",
+    "items": [
+      "**Claude Haiku 4.5**: Multiplier (paid) changed from '' to '0.33'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'GA'",
+      "**Claude Opus 4.5**: Multiplier (paid) changed from '' to '3'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Claude Opus 4.6**: Multiplier (paid) changed from '' to '3'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Claude Opus 4.6 (fast mode) (preview)**: Multiplier (paid) changed from '' to '30'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'Public preview'",
+      "**Claude Sonnet 4**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Claude Sonnet 4.5**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Claude Sonnet 4.6**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-4.1**: Multiplier (paid) changed from '' to '0'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'GA'",
+      "**GPT-5 mini**: Multiplier (paid) changed from '' to '0'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'GA'",
+      "**GPT-5.1**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-5.1-Codex**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-5.1-Codex-Max**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-5.1-Codex-Mini**: Multiplier (paid) changed from '' to '0.33'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'Public preview'",
+      "**GPT-5.2**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-5.2-Codex**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**GPT-5.3-Codex**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Gemini 2.5 Pro**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Gemini 3 Flash**: Multiplier (paid) changed from '' to '0.33'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'Public preview'",
+      "**Gemini 3 Pro**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'Public preview'",
+      "**Gemini 3.1 Pro**: Multiplier (paid) changed from '' to '1'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'Public preview'",
+      "**Goldeneye**: Multiplier (paid) changed from '' to 'Not applicable'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'Public preview'",
+      "**Grok Code Fast 1**: Multiplier (paid) changed from '' to '0.25'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
+      "**Raptor mini**: Multiplier (paid) changed from '' to '0'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'Public preview'"
+    ]
   }
 ]
