@@ -30,8 +30,8 @@ jobs:
           GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
           GITHUB_SERVER_URL: ${{ github.server_url }}
         run: |
+          set -euo pipefail
           python scripts/check_models.py
-          echo "release_notes_path=$(python3 -c 'import tempfile,os; print(os.path.join(tempfile.gettempdir(), \"release_notes.md\"))')" >> "$GITHUB_OUTPUT"
 
       - name: Commit updated data and pages
         if: steps.check.outputs.changed == 'true'
