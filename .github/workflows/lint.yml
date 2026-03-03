@@ -40,7 +40,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install mypy==1.19.1 playwright==1.58.0
+        run: pip install mypy==1.19.1
 
       - name: Run Mypy
         run: mypy scripts/ --ignore-missing-imports

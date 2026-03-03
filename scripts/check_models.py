@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Check GitHub Copilot models for changes and update pages.
 
-Scrapes https://docs.github.com/en/copilot/reference/ai-models/supported-models,
-compares with stored data, and generates GitHub Pages content (HTML + RSS feed)
-when changes are detected.
+Fetches model information from the GitHub Docs API (model-hosting and
+model-comparison pages), compares with stored data, and generates GitHub Pages
+content (HTML + RSS feed) when changes are detected.
 """
 
 import json
@@ -11,15 +11,22 @@ import os
 import re
 import sys
 import tempfile
+import urllib.request
 from datetime import datetime, timezone
 from email.utils import formatdate
-
-from playwright.sync_api import sync_playwright
 
 # Number of columns in the model table (used for the empty-state row)
 _MODEL_TABLE_COLS = 5
 
 DOCS_URL = "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
+_HOSTING_API_URL = (
+    "https://docs.github.com/api/article/body"
+    "?pathname=/en/copilot/reference/ai-models/model-hosting"
+)
+_COMPARISON_API_URL = (
+    "https://docs.github.com/api/article/body"
+    "?pathname=/en/copilot/reference/ai-models/model-comparison"
+)
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.join(_SCRIPT_DIR, "..")
@@ -82,99 +89,157 @@ def set_output(name: str, value: str) -> None:
 # Scraping
 # ---------------------------------------------------------------------------
 
-def scrape_models() -> dict:
-    """Use Playwright to render the docs page and extract model data.
+def _fetch_text(url: str) -> str:
+    """Fetch *url* and return the response body as decoded text."""
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "github-copilot-model-notifier/1.0"}
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:  # noqa: S310
+        return resp.read().decode("utf-8")
 
-    Returns a dict keyed by model name, each value containing provider,
-    release_status, multiplier_paid, and multiplier_free fields.
+
+def _parse_hosting_page(md: str) -> dict:
+    """Extract model names and providers from the model-hosting markdown.
+
+    The page groups models under h2 headings such as ``## OpenAI models``
+    and lists them as a bullet list after a ``Used for:`` label.
+    For the xAI section the model name appears in prose instead of a list.
     """
-    print("Scraping GitHub Docs for model information…")
     models: dict = {}
-    multipliers: dict = {}
 
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True)
-        page = browser.new_page()
+    # Order matters: more-specific patterns must come before shorter ones.
+    provider_sections = [
+        ("OpenAI models fine-tuned by Microsoft", "Microsoft"),
+        ("OpenAI models", "OpenAI"),
+        ("Anthropic models", "Anthropic"),
+        ("Google models", "Google"),
+        ("xAI models", "xAI"),
+    ]
 
-        page.goto(DOCS_URL, wait_until="networkidle", timeout=60_000)
+    current_provider: str | None = None
+    in_used_for = False
 
-        # Wait up to 15 s for at least one table cell to be non-empty
-        try:
-            page.wait_for_function(
-                "() => document.querySelectorAll('article table tbody tr td').length > 0",
-                timeout=15_000,
-            )
-        except Exception:
-            print("Warning: tables may not have fully loaded within the timeout")
+    for line in md.splitlines():
+        stripped = line.strip()
 
-        tables = page.locator("article table").all()
-        print(f"Found {len(tables)} table(s)")
+        # Detect a provider section header (e.g. "## OpenAI models")
+        new_provider = None
+        for section, provider in provider_sections:
+            if stripped == f"## {section}":
+                new_provider = provider
+                break
 
-        for table in tables:
-            # Collect header labels
-            header_els = table.locator("thead th, thead td").all()
-            if not header_els:
-                header_els = table.locator("tr:first-child th, tr:first-child td").all()
-            headers = [clean_text(h.inner_text()) for h in header_els]
-            if not headers:
-                continue
+        if new_provider is not None:
+            current_provider = new_provider
+            in_used_for = False
+            continue
 
-            print(f"  Table headers: {headers}")
+        # Any other h2 resets the current provider context
+        if stripped.startswith("## "):
+            current_provider = None
+            in_used_for = False
+            continue
 
-            rows = table.locator("tbody tr").all()
-            for row in rows:
-                cell_els = row.locator("td, th").all()
-                cells = [clean_text(c.inner_text()) for c in cell_els]
-                if not any(cells):
-                    continue
-                # Pad cells so we can zip safely
-                while len(cells) < len(headers):
-                    cells.append("")
-                row_data = dict(zip(headers, cells))
+        # "Used for:" starts the bullet-list of model names
+        if stripped == "Used for:":
+            in_used_for = True
+            continue
 
-                # ---- Supported AI models table (Model name | Provider | …) ----
-                if "Model name" in row_data:
-                    name = row_data.get("Model name", "").strip()
-                    if name:
-                        models[name] = {
-                            "provider": row_data.get("Provider", ""),
-                            "release_status": row_data.get("Release status", ""),
-                        }
+        # Non-blank, non-list content ends the bullet-list section
+        if in_used_for and stripped and not stripped.startswith("* "):
+            in_used_for = False
 
-                # ---- Model multipliers table (Model | Multiplier for … | …) ----
-                elif "Model" in row_data and any(
-                    "multiplier" in k.lower() for k in row_data
-                ):
-                    name = row_data.get("Model", "").strip()
-                    if name:
-                        paid_key = next(
-                            (k for k in row_data if "paid" in k.lower() and "multiplier" in k.lower()),
-                            "",
-                        )
-                        free_key = next(
-                            (k for k in row_data if "free" in k.lower() and "multiplier" in k.lower()),
-                            "",
-                        )
-                        multipliers[name] = {
-                            "multiplier_paid": row_data.get(paid_key, ""),
-                            "multiplier_free": row_data.get(free_key, ""),
-                        }
+        # Extract model names from the bullet list
+        if in_used_for and current_provider and stripped.startswith("* "):
+            name = stripped[2:].strip()
+            if name and name not in models:
+                models[name] = {
+                    "name": name,
+                    "provider": current_provider,
+                    "release_status": "",
+                    "multiplier_paid": "",
+                    "multiplier_free": "",
+                }
 
-        browser.close()
+    # The xAI section uses prose ("xAI operates MODEL in GitHub Copilot")
+    # instead of a bullet list, so we extract those names with a regex.
+    # The pattern matches a model name that starts and ends with an alphanumeric
+    # character and may contain letters, digits, spaces, dots, and hyphens in
+    # the middle (e.g. "Grok Code Fast 1").
+    for m in re.finditer(
+        r"xAI operates ([A-Za-z0-9][A-Za-z0-9 .\-]*[A-Za-z0-9]) in GitHub Copilot",
+        md,
+    ):
+        name = m.group(1).strip()
+        if name and name not in models:
+            models[name] = {
+                "name": name,
+                "provider": "xAI",
+                "release_status": "",
+                "multiplier_paid": "",
+                "multiplier_free": "",
+            }
 
-    # Merge the two sources
-    result: dict = {}
-    for name in sorted(set(list(models) + list(multipliers))):
-        result[name] = {
-            "name": name,
-            "provider": models.get(name, {}).get("provider", ""),
-            "release_status": models.get(name, {}).get("release_status", ""),
-            "multiplier_paid": multipliers.get(name, {}).get("multiplier_paid", ""),
-            "multiplier_free": multipliers.get(name, {}).get("multiplier_free", ""),
-        }
+    return models
 
-    print(f"Extracted {len(result)} model(s)")
-    return result
+
+def _parse_comparison_page(md: str, existing: dict) -> dict:
+    """Supplement *existing* models with any found in the model-comparison page.
+
+    The comparison page contains two-column markdown tables whose first column
+    holds the model name (e.g. ``| GPT-5.1-Codex | Delivers… |``).
+    Header rows, separator rows, and known non-model strings are skipped.
+    """
+    _SKIP_NAMES = {
+        "model",
+        "available models in chat",
+        "model name",
+    }
+
+    models = dict(existing)
+
+    for line in md.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("|"):
+            continue
+        cells = [c.strip() for c in stripped.split("|")[1:-1]]
+        if not cells:
+            continue
+        name = cells[0]
+        # Skip header rows, separator rows, and empty/known-non-model cells
+        if not name or name.startswith("-") or name.lower() in _SKIP_NAMES:
+            continue
+        # Model names start with a capital letter; this filters out separator
+        # rows (e.g. "---") and lower-case prose text that may appear in tables.
+        if name[0].isupper() and name not in models:
+            models[name] = {
+                "name": name,
+                "provider": "",
+                "release_status": "",
+                "multiplier_paid": "",
+                "multiplier_free": "",
+            }
+
+    return models
+
+
+def scrape_models() -> dict:
+    """Fetch model information from GitHub Docs API endpoints.
+
+    Uses the model-hosting page as the primary source for providers, and the
+    model-comparison page to fill in any models not listed there.  Returns a
+    dict keyed by model name.
+    """
+    print("Fetching GitHub Docs model information…")
+
+    hosting_md = _fetch_text(_HOSTING_API_URL)
+    models = _parse_hosting_page(hosting_md)
+
+    comparison_md = _fetch_text(_COMPARISON_API_URL)
+    models = _parse_comparison_page(comparison_md, models)
+
+    print(f"Extracted {len(models)} model(s)")
+    return models
 
 
 # ---------------------------------------------------------------------------

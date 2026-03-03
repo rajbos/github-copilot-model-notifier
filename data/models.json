@@ -1,1 +1,163 @@
-{}
+{
+  "GPT-4.1": {
+    "name": "GPT-4.1",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5 mini": {
+    "name": "GPT-5 mini",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.1": {
+    "name": "GPT-5.1",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.1-Codex": {
+    "name": "GPT-5.1-Codex",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.1-Codex-Mini": {
+    "name": "GPT-5.1-Codex-Mini",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.1-Codex-Max": {
+    "name": "GPT-5.1-Codex-Max",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.2": {
+    "name": "GPT-5.2",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.2-Codex": {
+    "name": "GPT-5.2-Codex",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.3-Codex": {
+    "name": "GPT-5.3-Codex",
+    "provider": "OpenAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Raptor mini": {
+    "name": "Raptor mini",
+    "provider": "Microsoft",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Goldeneye": {
+    "name": "Goldeneye",
+    "provider": "Microsoft",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Haiku 4.5": {
+    "name": "Claude Haiku 4.5",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 4.5": {
+    "name": "Claude Sonnet 4.5",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Opus 4.5": {
+    "name": "Claude Opus 4.5",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Opus 4.6": {
+    "name": "Claude Opus 4.6",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Opus 4.6 (fast mode) (preview)": {
+    "name": "Claude Opus 4.6 (fast mode) (preview)",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 4": {
+    "name": "Claude Sonnet 4",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 4.6": {
+    "name": "Claude Sonnet 4.6",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Gemini 2.5 Pro": {
+    "name": "Gemini 2.5 Pro",
+    "provider": "Google",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Gemini 3 Pro": {
+    "name": "Gemini 3 Pro",
+    "provider": "Google",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Gemini 3 Flash": {
+    "name": "Gemini 3 Flash",
+    "provider": "Google",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Gemini 3.1 Pro": {
+    "name": "Gemini 3.1 Pro",
+    "provider": "Google",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Grok Code Fast 1": {
+    "name": "Grok Code Fast 1",
+    "provider": "xAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  }
+}
