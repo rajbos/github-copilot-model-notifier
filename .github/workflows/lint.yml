@@ -1,0 +1,46 @@
+name: Lint
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ruff:
+    name: Ruff (linter)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95b21b72e566a14 # v5.5.0
+        with:
+          python-version: '3.12'
+
+      - name: Install Ruff
+        run: pip install ruff==0.15.4
+
+      - name: Run Ruff
+        run: ruff check scripts/
+
+  mypy:
+    name: Mypy (type checker)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95b21b72e566a14 # v5.5.0
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install mypy==1.19.1 playwright==1.58.0
+
+      - name: Run Mypy
+        run: mypy scripts/ --ignore-missing-imports
