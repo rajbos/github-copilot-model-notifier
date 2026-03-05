@@ -1,16 +1,7 @@
 # GitHub Copilot Model Notifier
 
 Get notified when GitHub Copilot's supported AI models change — new models added, models retired, or multipliers updated.
-
-## How it works
-
-A scheduled GitHub Actions workflow runs every Monday and scrapes the [GitHub Copilot supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) documentation page.
-When changes are detected (new model, removed model, or updated provider/multiplier), the workflow:
-
-1. Updates [`data/models.json`](data/models.json) with the latest model snapshot.
-2. Appends an entry to [`data/changes.json`](data/changes.json) with the diff.
-3. Regenerates the [GitHub Pages site](https://rajbos.github.io/github-copilot-model-notifier/) with the latest model table and change history.
-4. Creates a **GitHub Release** containing the change summary.
+A daily check run executes at 8:00 UTC, and checks the official GitHub docs for changes to the models. If so, it creates a data point that will be reflected as a Release in this repo as well as an entry in the RSS feed in our website. Subscribe to either of those to get notified.
 
 ## Subscribe to notifications
 
@@ -29,6 +20,16 @@ https://rajbos.github.io/github-copilot-model-notifier/feed.xml
 2. Select **Custom → Releases**.
 
 You will receive a notification every time a new release is published.
+
+# How it works
+
+A scheduled GitHub Actions workflow runs every day and scrapes the [GitHub Copilot supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) documentation page.
+When changes are detected (new model, removed model, or updated provider/multiplier), the workflow:
+
+1. Updates [`data/models.json`](data/models.json) with the latest model snapshot.
+2. Appends an entry to [`data/changes.json`](data/changes.json) with the diff.
+3. Regenerates the [GitHub Pages site](https://rajbos.github.io/github-copilot-model-notifier/) with the latest model table and change history.
+4. Creates a **GitHub Release** containing the change summary.
 
 ## GitHub Pages setup
 
