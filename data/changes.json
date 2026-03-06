@@ -60,5 +60,15 @@
       "**Grok Code Fast 1**: Multiplier (paid) changed from '' to '0.25'; Multiplier (free) changed from '' to 'Not applicable'; Release status changed from '' to 'GA'",
       "**Raptor mini**: Multiplier (paid) changed from '' to '0'; Multiplier (free) changed from '' to '1'; Release status changed from '' to 'Public preview'"
     ]
+  },
+  {
+    "date": "2026-03-06 08:10 UTC",
+    "pub_date": "Fri, 06 Mar 2026 08:10:40 GMT",
+    "title": "Model Update: 2026-03-06",
+    "tag": "models-2026-03-06-081040",
+    "items": [
+      "**New model added**: GPT-5.4 (Provider: OpenAI), Multiplier: 1",
+      "**Grok Code Fast 1**: Multiplier (free) changed from 'Not applicable' to '1'"
+    ]
   }
 ]
