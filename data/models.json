@@ -69,6 +69,13 @@
     "multiplier_paid": "1",
     "multiplier_free": "Not applicable"
   },
+  "GPT-5.4 mini": {
+    "name": "GPT-5.4 mini",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "0.33",
+    "multiplier_free": "Not applicable"
+  },
   "Raptor mini": {
     "name": "Raptor mini",
     "provider": "Microsoft",
