@@ -79,5 +79,18 @@
     "items": [
       "**New model added**: GPT-5.4 mini (Provider: OpenAI), Multiplier: 0.33"
     ]
+  },
+  {
+    "date": "2026-03-27 08:17 UTC",
+    "pub_date": "Fri, 27 Mar 2026 08:17:31 GMT",
+    "title": "Model Update: 2026-03-27",
+    "tag": "models-2026-03-27-081731",
+    "items": [
+      "**Model removed**: Gemini 3 Pro",
+      "**GPT-5.1**: Release status changed from 'GA' to 'Closing down: 2026-04-01'",
+      "**GPT-5.1-Codex**: Release status changed from 'GA' to 'Closing down: 2026-04-01'",
+      "**GPT-5.1-Codex-Max**: Release status changed from 'GA' to 'Closing down: 2026-04-01'",
+      "**GPT-5.1-Codex-Mini**: Release status changed from 'Public preview' to 'Closing down: 2026-04-01'"
+    ]
   }
 ]
