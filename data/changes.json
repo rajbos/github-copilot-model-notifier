@@ -92,5 +92,17 @@
       "**GPT-5.1-Codex-Max**: Release status changed from 'GA' to 'Closing down: 2026-04-01'",
       "**GPT-5.1-Codex-Mini**: Release status changed from 'Public preview' to 'Closing down: 2026-04-01'"
     ]
+  },
+  {
+    "date": "2026-04-02 08:23 UTC",
+    "pub_date": "Thu, 02 Apr 2026 08:23:30 GMT",
+    "title": "Model Update: 2026-04-02",
+    "tag": "models-2026-04-02-082330",
+    "items": [
+      "**Model removed**: GPT-5.1-Codex",
+      "**Model removed**: GPT-5.1-Codex-Max",
+      "**Model removed**: GPT-5.1-Codex-Mini",
+      "**GPT-5.1**: Release status changed from 'Closing down: 2026-04-01' to 'Closing down: 2026-04-15'"
+    ]
   }
 ]

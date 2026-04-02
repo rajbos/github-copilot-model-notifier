@@ -16,28 +16,7 @@
   "GPT-5.1": {
     "name": "GPT-5.1",
     "provider": "OpenAI",
-    "release_status": "Closing down: 2026-04-01",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.1-Codex": {
-    "name": "GPT-5.1-Codex",
-    "provider": "OpenAI",
-    "release_status": "Closing down: 2026-04-01",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.1-Codex-Mini": {
-    "name": "GPT-5.1-Codex-Mini",
-    "provider": "OpenAI",
-    "release_status": "Closing down: 2026-04-01",
-    "multiplier_paid": "0.33",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.1-Codex-Max": {
-    "name": "GPT-5.1-Codex-Max",
-    "provider": "OpenAI",
-    "release_status": "Closing down: 2026-04-01",
+    "release_status": "Closing down: 2026-04-15",
     "multiplier_paid": "1",
     "multiplier_free": "Not applicable"
   },
