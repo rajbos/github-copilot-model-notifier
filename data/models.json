@@ -13,13 +13,6 @@
     "multiplier_paid": "0",
     "multiplier_free": "1"
   },
-  "GPT-5.1": {
-    "name": "GPT-5.1",
-    "provider": "OpenAI",
-    "release_status": "Closing down: 2026-04-15",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
   "GPT-5.2": {
     "name": "GPT-5.2",
     "provider": "OpenAI",
