@@ -113,5 +113,14 @@
     "items": [
       "**Model removed**: GPT-5.1"
     ]
+  },
+  {
+    "date": "2026-04-17 08:36 UTC",
+    "pub_date": "Fri, 17 Apr 2026 08:36:07 GMT",
+    "title": "Model Update: 2026-04-17",
+    "tag": "models-2026-04-17-083607",
+    "items": [
+      "**New model added**: Claude Opus 4.7 (Provider: Anthropic), Multiplier: 7.5"
+    ]
   }
 ]
