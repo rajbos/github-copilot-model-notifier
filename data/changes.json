@@ -122,5 +122,14 @@
     "items": [
       "**New model added**: Claude Opus 4.7 (Provider: Anthropic), Multiplier: 7.5"
     ]
+  },
+  {
+    "date": "2026-04-22 08:37 UTC",
+    "pub_date": "Wed, 22 Apr 2026 08:37:18 GMT",
+    "title": "Model Update: 2026-04-22",
+    "tag": "models-2026-04-22-083718",
+    "items": [
+      "**New model added**: GPT-5.4 nano (Provider: OpenAI), Multiplier: 0.25"
+    ]
   }
 ]
