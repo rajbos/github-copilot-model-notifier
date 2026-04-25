@@ -131,5 +131,14 @@
     "items": [
       "**New model added**: GPT-5.4 nano (Provider: OpenAI), Multiplier: 0.25"
     ]
+  },
+  {
+    "date": "2026-04-25 08:21 UTC",
+    "pub_date": "Sat, 25 Apr 2026 08:21:51 GMT",
+    "title": "Model Update: 2026-04-25",
+    "tag": "models-2026-04-25-082151",
+    "items": [
+      "**New model added**: GPT-5.5 (Provider: OpenAI), Multiplier: 7.5"
+    ]
   }
 ]
