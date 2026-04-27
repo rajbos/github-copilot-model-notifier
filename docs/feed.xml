@@ -3,10 +3,17 @@
   <channel>
     <title>GitHub Copilot Model Updates</title>
     <link>https://rajbos.github.io/github-copilot-model-notifier</link>
-    <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
+    <description>Notifications about changes to GitHub Copilot models including new models, removed models, and pricing changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 25 Apr 2026 08:21:51 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 27 Apr 2026 18:55:24 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-04-27</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-27-184400</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Data source updated**: Now sourcing model data from the GitHub Copilot billing/pricing page (https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Model records now include per-token pricing (Input, Cached Input, Cache Write, Output per 1M tokens) and model category instead of multiplier information.&lt;/li&gt;&lt;li&gt;**Model removed**: Claude Opus 4.6 (fast mode) (preview) — replaced by **New model added**: Claude Opus 4.6 (fast mode) (Provider: Anthropic, name updated to match billing page)&lt;/li&gt;&lt;li&gt;**Provider updated**: Goldeneye and Raptor mini provider changed from 'Microsoft' to 'GitHub' (Fine-tuned by GitHub)&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.5 (no longer listed on the billing/pricing page)&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Mon, 27 Apr 2026 18:44:00 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-27-184400</guid>
+    </item>
     <item>
       <title>Model Update: 2026-04-25</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-25-082151</link>

@@ -41,8 +41,8 @@
 </head>
 <body>
   <h1>&#x1F916; GitHub Copilot Model Updates</h1>
-  <p>Automatically tracks changes to <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Copilot's supported AI models</a>,
-  including new models, retired models, and multiplier changes.</p>
+  <p>Automatically tracks changes to <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">GitHub Copilot's AI model pricing</a>,
+  including new models, retired models, and pricing changes. All prices are per 1 million tokens.</p>
 
   <div class="subscribe">
     <strong>&#x1F4EC; Subscribe to updates:</strong>
@@ -52,7 +52,7 @@
     </ul>
   </div>
 
-  <p class="updated">Last updated: 2026-04-25 08:21 UTC &nbsp;|&nbsp; Source: <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Docs</a></p>
+  <p class="updated">Last updated: 2026-04-27 18:55 UTC &nbsp;|&nbsp; Source: <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">GitHub Docs</a></p>
 
   <h2>Current Models (23)</h2>
   <table>
@@ -61,8 +61,11 @@
         <th>Model Name</th>
         <th>Provider</th>
         <th>Release Status</th>
-        <th>Multiplier (Paid Plans)</th>
-        <th>Multiplier (Copilot Free)</th>
+        <th>Category</th>
+        <th>Input ($/1M)</th>
+        <th>Cached Input ($/1M)</th>
+        <th>Cache Write ($/1M)</th>
+        <th>Output ($/1M)</th>
       </tr>
     </thead>
     <tbody>
@@ -70,167 +73,241 @@
         <td>Claude Haiku 4.5</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>0.33</td>
-        <td>1</td>
+        <td>Versatile</td>
+        <td>$1.00</td>
+        <td>$0.10</td>
+        <td>$1.25</td>
+        <td>$5.00</td>
       </tr>
       <tr>
         <td>Claude Opus 4.5</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>3</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$5.00</td>
+        <td>$0.50</td>
+        <td>$6.25</td>
+        <td>$25.00</td>
       </tr>
       <tr>
         <td>Claude Opus 4.6</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>3</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$5.00</td>
+        <td>$0.50</td>
+        <td>$6.25</td>
+        <td>$25.00</td>
       </tr>
       <tr>
-        <td>Claude Opus 4.6 (fast mode) (preview)</td>
+        <td>Claude Opus 4.6 (fast mode)</td>
         <td>Anthropic</td>
         <td>Public preview</td>
-        <td>30</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$30.00</td>
+        <td>$3.00</td>
+        <td>$37.50</td>
+        <td>$150.00</td>
       </tr>
       <tr>
         <td>Claude Opus 4.7</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>7.5</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$5.00</td>
+        <td>$0.50</td>
+        <td>$6.25</td>
+        <td>$25.00</td>
       </tr>
       <tr>
         <td>Claude Sonnet 4</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Versatile</td>
+        <td>$3.00</td>
+        <td>$0.30</td>
+        <td>$3.75</td>
+        <td>$15.00</td>
       </tr>
       <tr>
         <td>Claude Sonnet 4.5</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Versatile</td>
+        <td>$3.00</td>
+        <td>$0.30</td>
+        <td>$3.75</td>
+        <td>$15.00</td>
       </tr>
       <tr>
         <td>Claude Sonnet 4.6</td>
         <td>Anthropic</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Versatile</td>
+        <td>$3.00</td>
+        <td>$0.30</td>
+        <td>$3.75</td>
+        <td>$15.00</td>
       </tr>
       <tr>
         <td>GPT-4.1</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>0</td>
-        <td>1</td>
+        <td>Versatile</td>
+        <td>$2.00</td>
+        <td>$0.50</td>
+        <td>N/A</td>
+        <td>$8.00</td>
       </tr>
       <tr>
         <td>GPT-5 mini</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>0</td>
-        <td>1</td>
+        <td>Lightweight</td>
+        <td>$0.25</td>
+        <td>$0.025</td>
+        <td>N/A</td>
+        <td>$2.00</td>
       </tr>
       <tr>
         <td>GPT-5.2</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Versatile</td>
+        <td>$1.75</td>
+        <td>$0.175</td>
+        <td>N/A</td>
+        <td>$14.00</td>
       </tr>
       <tr>
         <td>GPT-5.2-Codex</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$1.75</td>
+        <td>$0.175</td>
+        <td>N/A</td>
+        <td>$14.00</td>
       </tr>
       <tr>
         <td>GPT-5.3-Codex</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$1.75</td>
+        <td>$0.175</td>
+        <td>N/A</td>
+        <td>$14.00</td>
       </tr>
       <tr>
         <td>GPT-5.4</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Versatile</td>
+        <td>$2.50</td>
+        <td>$0.25</td>
+        <td>N/A</td>
+        <td>$15.00</td>
       </tr>
       <tr>
         <td>GPT-5.4 mini</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>0.33</td>
-        <td>Not applicable</td>
+        <td>Lightweight</td>
+        <td>$0.75</td>
+        <td>$0.075</td>
+        <td>N/A</td>
+        <td>$4.50</td>
       </tr>
       <tr>
         <td>GPT-5.4 nano</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>0.25</td>
-        <td>Not applicable</td>
+        <td>Lightweight</td>
+        <td>$0.20</td>
+        <td>$0.02</td>
+        <td>N/A</td>
+        <td>$1.25</td>
       </tr>
       <tr>
         <td>GPT-5.5</td>
         <td>OpenAI</td>
         <td>GA</td>
-        <td>7.5</td>
-        <td>Not applicable</td>
+        <td></td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>N/A</td>
       </tr>
       <tr>
         <td>Gemini 2.5 Pro</td>
         <td>Google</td>
         <td>GA</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$1.25</td>
+        <td>$0.125</td>
+        <td>N/A</td>
+        <td>$10.00</td>
       </tr>
       <tr>
         <td>Gemini 3 Flash</td>
         <td>Google</td>
         <td>Public preview</td>
-        <td>0.33</td>
-        <td>Not applicable</td>
+        <td>Lightweight</td>
+        <td>$0.50</td>
+        <td>$0.05</td>
+        <td>N/A</td>
+        <td>$3.00</td>
       </tr>
       <tr>
         <td>Gemini 3.1 Pro</td>
         <td>Google</td>
         <td>Public preview</td>
-        <td>1</td>
-        <td>Not applicable</td>
+        <td>Powerful</td>
+        <td>$2.00</td>
+        <td>$0.20</td>
+        <td>N/A</td>
+        <td>$12.00</td>
       </tr>
       <tr>
         <td>Goldeneye</td>
-        <td>Microsoft</td>
+        <td>GitHub</td>
         <td>Public preview</td>
-        <td>Not applicable</td>
-        <td>1</td>
+        <td>Powerful</td>
+        <td>$1.25</td>
+        <td>$0.125</td>
+        <td>N/A</td>
+        <td>$10.00</td>
       </tr>
       <tr>
         <td>Grok Code Fast 1</td>
         <td>xAI</td>
         <td>GA</td>
-        <td>0.25</td>
-        <td>1</td>
+        <td>Lightweight</td>
+        <td>$0.20</td>
+        <td>$0.02</td>
+        <td>N/A</td>
+        <td>$1.50</td>
       </tr>
       <tr>
         <td>Raptor mini</td>
-        <td>Microsoft</td>
+        <td>GitHub</td>
         <td>Public preview</td>
-        <td>0</td>
-        <td>1</td>
+        <td>Versatile</td>
+        <td>$0.25</td>
+        <td>$0.025</td>
+        <td>N/A</td>
+        <td>$2.00</td>
       </tr>
     </tbody>
   </table>
 
   <h2>Recent Changes</h2>
+  <div class="change-item">
+    <h3><a href="https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-27-184400">Model Update: 2026-04-27</a></h3>
+    <p class="date">2026-04-27 18:44 UTC</p>
+    <ul><li>**Data source updated**: Now sourcing model data from the GitHub Copilot billing/pricing page (https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Model records now include per-token pricing (Input, Cached Input, Cache Write, Output per 1M tokens) and model category instead of multiplier information.</li><li>**Model removed**: Claude Opus 4.6 (fast mode) (preview) — replaced by **New model added**: Claude Opus 4.6 (fast mode) (Provider: Anthropic, name updated to match billing page)</li><li>**Provider updated**: Goldeneye and Raptor mini provider changed from 'Microsoft' to 'GitHub' (Fine-tuned by GitHub)</li><li>**Model removed**: GPT-5.5 (no longer listed on the billing/pricing page)</li></ul>
+  </div>
   <div class="change-item">
     <h3><a href="https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-25-082151">Model Update: 2026-04-25</a></h3>
     <p class="date">2026-04-25 08:21 UTC</p>
@@ -285,7 +362,7 @@
   <footer>
     <p>This page is automatically updated by a
     <a href="https://github.com/rajbos/github-copilot-model-notifier">GitHub Actions workflow</a>.
-    Data sourced from <a href="https://docs.github.com/en/copilot/reference/ai-models/supported-models">GitHub Docs</a>.</p>
+    Data sourced from <a href="https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing">GitHub Docs</a>.</p>
   </footer>
 </body>
 </html>
