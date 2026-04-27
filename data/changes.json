@@ -140,5 +140,17 @@
     "items": [
       "**New model added**: GPT-5.5 (Provider: OpenAI), Multiplier: 7.5"
     ]
+  },
+  {
+    "date": "2026-04-27 18:44 UTC",
+    "pub_date": "Mon, 27 Apr 2026 18:44:00 GMT",
+    "title": "Model Update: 2026-04-27",
+    "tag": "models-2026-04-27-184400",
+    "items": [
+      "**Data source updated**: Now sourcing model data from the GitHub Copilot billing/pricing page (https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing). Model records now include per-token pricing (Input, Cached Input, Cache Write, Output per 1M tokens) and model category instead of multiplier information.",
+      "**Model removed**: Claude Opus 4.6 (fast mode) (preview) — replaced by **New model added**: Claude Opus 4.6 (fast mode) (Provider: Anthropic, name updated to match billing page)",
+      "**Provider updated**: Goldeneye and Raptor mini provider changed from 'Microsoft' to 'GitHub' (Fine-tuned by GitHub)",
+      "**Model removed**: GPT-5.5 (no longer listed on the billing/pricing page)"
+    ]
   }
 ]

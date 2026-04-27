@@ -1,163 +1,232 @@
 {
-  "GPT-4.1": {
-    "name": "GPT-4.1",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "0",
-    "multiplier_free": "1"
-  },
-  "GPT-5 mini": {
-    "name": "GPT-5 mini",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "0",
-    "multiplier_free": "1"
-  },
-  "GPT-5.2": {
-    "name": "GPT-5.2",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.2-Codex": {
-    "name": "GPT-5.2-Codex",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.3-Codex": {
-    "name": "GPT-5.3-Codex",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.4": {
-    "name": "GPT-5.4",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.4 mini": {
-    "name": "GPT-5.4 mini",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "0.33",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.4 nano": {
-    "name": "GPT-5.4 nano",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "0.25",
-    "multiplier_free": "Not applicable"
-  },
-  "GPT-5.5": {
-    "name": "GPT-5.5",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "7.5",
-    "multiplier_free": "Not applicable"
-  },
-  "Raptor mini": {
-    "name": "Raptor mini",
-    "provider": "Microsoft",
-    "release_status": "Public preview",
-    "multiplier_paid": "0",
-    "multiplier_free": "1"
-  },
-  "Goldeneye": {
-    "name": "Goldeneye",
-    "provider": "Microsoft",
-    "release_status": "Public preview",
-    "multiplier_paid": "Not applicable",
-    "multiplier_free": "1"
-  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "0.33",
-    "multiplier_free": "1"
-  },
-  "Claude Sonnet 4.5": {
-    "name": "Claude Sonnet 4.5",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
+    "category": "Versatile",
+    "input_price": "1.00",
+    "cached_input_price": "0.10",
+    "cache_write_price": "1.25",
+    "output_price": "5.00"
   },
   "Claude Opus 4.5": {
     "name": "Claude Opus 4.5",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "3",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "5.00",
+    "cached_input_price": "0.50",
+    "cache_write_price": "6.25",
+    "output_price": "25.00"
   },
   "Claude Opus 4.6": {
     "name": "Claude Opus 4.6",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "3",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "5.00",
+    "cached_input_price": "0.50",
+    "cache_write_price": "6.25",
+    "output_price": "25.00"
   },
-  "Claude Opus 4.6 (fast mode) (preview)": {
-    "name": "Claude Opus 4.6 (fast mode) (preview)",
+  "Claude Opus 4.6 (fast mode)": {
+    "name": "Claude Opus 4.6 (fast mode)",
     "provider": "Anthropic",
     "release_status": "Public preview",
-    "multiplier_paid": "30",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "30.00",
+    "cached_input_price": "3.00",
+    "cache_write_price": "37.50",
+    "output_price": "150.00"
   },
   "Claude Opus 4.7": {
     "name": "Claude Opus 4.7",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "7.5",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "5.00",
+    "cached_input_price": "0.50",
+    "cache_write_price": "6.25",
+    "output_price": "25.00"
   },
   "Claude Sonnet 4": {
     "name": "Claude Sonnet 4",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
+    "category": "Versatile",
+    "input_price": "3.00",
+    "cached_input_price": "0.30",
+    "cache_write_price": "3.75",
+    "output_price": "15.00"
+  },
+  "Claude Sonnet 4.5": {
+    "name": "Claude Sonnet 4.5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "category": "Versatile",
+    "input_price": "3.00",
+    "cached_input_price": "0.30",
+    "cache_write_price": "3.75",
+    "output_price": "15.00"
   },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
     "provider": "Anthropic",
     "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
+    "category": "Versatile",
+    "input_price": "3.00",
+    "cached_input_price": "0.30",
+    "cache_write_price": "3.75",
+    "output_price": "15.00"
+  },
+  "GPT-4.1": {
+    "name": "GPT-4.1",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Versatile",
+    "input_price": "2.00",
+    "cached_input_price": "0.50",
+    "cache_write_price": "",
+    "output_price": "8.00"
+  },
+  "GPT-5 mini": {
+    "name": "GPT-5 mini",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Lightweight",
+    "input_price": "0.25",
+    "cached_input_price": "0.025",
+    "cache_write_price": "",
+    "output_price": "2.00"
+  },
+  "GPT-5.2": {
+    "name": "GPT-5.2",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Versatile",
+    "input_price": "1.75",
+    "cached_input_price": "0.175",
+    "cache_write_price": "",
+    "output_price": "14.00"
+  },
+  "GPT-5.2-Codex": {
+    "name": "GPT-5.2-Codex",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Powerful",
+    "input_price": "1.75",
+    "cached_input_price": "0.175",
+    "cache_write_price": "",
+    "output_price": "14.00"
+  },
+  "GPT-5.3-Codex": {
+    "name": "GPT-5.3-Codex",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Powerful",
+    "input_price": "1.75",
+    "cached_input_price": "0.175",
+    "cache_write_price": "",
+    "output_price": "14.00"
+  },
+  "GPT-5.4": {
+    "name": "GPT-5.4",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Versatile",
+    "input_price": "2.50",
+    "cached_input_price": "0.25",
+    "cache_write_price": "",
+    "output_price": "15.00"
+  },
+  "GPT-5.4 mini": {
+    "name": "GPT-5.4 mini",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Lightweight",
+    "input_price": "0.75",
+    "cached_input_price": "0.075",
+    "cache_write_price": "",
+    "output_price": "4.50"
+  },
+  "GPT-5.4 nano": {
+    "name": "GPT-5.4 nano",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "Lightweight",
+    "input_price": "0.20",
+    "cached_input_price": "0.02",
+    "cache_write_price": "",
+    "output_price": "1.25"
+  },
+  "GPT-5.5": {
+    "name": "GPT-5.5",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "category": "",
+    "input_price": "",
+    "cached_input_price": "",
+    "cache_write_price": "",
+    "output_price": ""
   },
   "Gemini 2.5 Pro": {
     "name": "Gemini 2.5 Pro",
     "provider": "Google",
     "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "1.25",
+    "cached_input_price": "0.125",
+    "cache_write_price": "",
+    "output_price": "10.00"
   },
   "Gemini 3 Flash": {
     "name": "Gemini 3 Flash",
     "provider": "Google",
     "release_status": "Public preview",
-    "multiplier_paid": "0.33",
-    "multiplier_free": "Not applicable"
+    "category": "Lightweight",
+    "input_price": "0.50",
+    "cached_input_price": "0.05",
+    "cache_write_price": "",
+    "output_price": "3.00"
   },
   "Gemini 3.1 Pro": {
     "name": "Gemini 3.1 Pro",
     "provider": "Google",
     "release_status": "Public preview",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
+    "category": "Powerful",
+    "input_price": "2.00",
+    "cached_input_price": "0.20",
+    "cache_write_price": "",
+    "output_price": "12.00"
+  },
+  "Goldeneye": {
+    "name": "Goldeneye",
+    "provider": "GitHub",
+    "release_status": "Public preview",
+    "category": "Powerful",
+    "input_price": "1.25",
+    "cached_input_price": "0.125",
+    "cache_write_price": "",
+    "output_price": "10.00"
   },
   "Grok Code Fast 1": {
     "name": "Grok Code Fast 1",
     "provider": "xAI",
     "release_status": "GA",
-    "multiplier_paid": "0.25",
-    "multiplier_free": "1"
+    "category": "Lightweight",
+    "input_price": "0.20",
+    "cached_input_price": "0.02",
+    "cache_write_price": "",
+    "output_price": "1.50"
+  },
+  "Raptor mini": {
+    "name": "Raptor mini",
+    "provider": "GitHub",
+    "release_status": "Public preview",
+    "category": "Versatile",
+    "input_price": "0.25",
+    "cached_input_price": "0.025",
+    "cache_write_price": "",
+    "output_price": "2.00"
   }
 }

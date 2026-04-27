@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Check GitHub Copilot models for changes and update pages.
 
-Fetches model information from the GitHub Docs API (model-hosting and
-model-comparison pages), compares with stored data, and generates GitHub Pages
-content (HTML + RSS feed) when changes are detected.
+Fetches model information from the GitHub Copilot billing/pricing docs page,
+compares with stored data, and generates GitHub Pages content (HTML + RSS feed)
+when changes are detected.
 """
 
 import json
@@ -16,18 +16,10 @@ from datetime import datetime, timezone
 from email.utils import formatdate
 
 # Number of columns in the model table (used for the empty-state row)
-_MODEL_TABLE_COLS = 5
+_MODEL_TABLE_COLS = 8
 
-DOCS_URL = "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
-_HOSTING_API_URL = (
-    "https://docs.github.com/api/article/body"
-    "?pathname=/en/copilot/reference/ai-models/model-hosting"
-)
-_COMPARISON_API_URL = (
-    "https://docs.github.com/api/article/body"
-    "?pathname=/en/copilot/reference/ai-models/model-comparison"
-)
-_SUPPORTED_MODELS_HTML_URL = DOCS_URL
+DOCS_URL = "https://docs.github.com/en/copilot/reference/copilot-billing/models-and-pricing"
+_BILLING_HTML_URL = DOCS_URL
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 _REPO_ROOT = os.path.join(_SCRIPT_DIR, "..")
@@ -99,220 +91,135 @@ def _fetch_text(url: str) -> str:
         return resp.read().decode("utf-8")
 
 
-def _parse_hosting_page(md: str) -> dict:
-    """Extract model names and providers from the model-hosting markdown.
+def _parse_billing_page(html: str) -> dict:
+    """Parse the billing/models-and-pricing HTML page to extract model data.
 
-    The page groups models under h2 headings such as ``## OpenAI models``
-    and lists them as a bullet list after a ``Used for:`` label.
-    For the xAI section the model name appears in prose instead of a list.
+    Iterates through h2/h3 headings and table elements in document order.
+    Provider names are taken from h3 headings in the Pricing tables section.
+    Pricing data is extracted from tables that contain an ``Input`` column.
     """
-    models: dict = {}
-
-    # Order matters: more-specific patterns must come before shorter ones.
-    provider_sections = [
-        ("OpenAI models fine-tuned by Microsoft", "Microsoft"),
-        ("OpenAI models", "OpenAI"),
-        ("Anthropic models", "Anthropic"),
-        ("Google models", "Google"),
-        ("xAI models", "xAI"),
-    ]
-
-    current_provider: str | None = None
-    in_used_for = False
-
-    for line in md.splitlines():
-        stripped = line.strip()
-
-        # Detect a provider section header (e.g. "## OpenAI models")
-        new_provider = None
-        for section, provider in provider_sections:
-            if stripped == f"## {section}":
-                new_provider = provider
-                break
-
-        if new_provider is not None:
-            current_provider = new_provider
-            in_used_for = False
-            continue
-
-        # Any other h2 resets the current provider context
-        if stripped.startswith("## "):
-            current_provider = None
-            in_used_for = False
-            continue
-
-        # "Used for:" starts the bullet-list of model names
-        if stripped == "Used for:":
-            in_used_for = True
-            continue
-
-        # Non-blank, non-list content ends the bullet-list section
-        if in_used_for and stripped and not stripped.startswith("* "):
-            in_used_for = False
-
-        # Extract model names from the bullet list
-        if in_used_for and current_provider and stripped.startswith("* "):
-            name = stripped[2:].strip()
-            if name and name not in models:
-                models[name] = {
-                    "name": name,
-                    "provider": current_provider,
-                    "release_status": "",
-                    "multiplier_paid": "",
-                    "multiplier_free": "",
-                }
-
-    # The xAI section uses prose ("xAI operates MODEL in GitHub Copilot")
-    # instead of a bullet list, so we extract those names with a regex.
-    # The pattern matches a model name that starts and ends with an alphanumeric
-    # character and may contain letters, digits, spaces, dots, and hyphens in
-    # the middle (e.g. "Grok Code Fast 1").
-    for m in re.finditer(
-        r"xAI operates ([A-Za-z0-9][A-Za-z0-9 .\-]*[A-Za-z0-9]) in GitHub Copilot",
-        md,
-    ):
-        name = m.group(1).strip()
-        if name and name not in models:
-            models[name] = {
-                "name": name,
-                "provider": "xAI",
-                "release_status": "",
-                "multiplier_paid": "",
-                "multiplier_free": "",
-            }
-
-    return models
-
-
-def _parse_comparison_page(md: str, existing: dict) -> dict:
-    """Supplement *existing* models with any found in the model-comparison page.
-
-    The comparison page contains two-column markdown tables whose first column
-    holds the model name (e.g. ``| GPT-5.1-Codex | Delivers… |``).
-    Header rows, separator rows, and known non-model strings are skipped.
-    """
-    _SKIP_NAMES = {
-        "model",
-        "available models in chat",
-        "model name",
+    _PROVIDER_MAP = {
+        "openai": "OpenAI",
+        "anthropic": "Anthropic",
+        "google": "Google",
+        "xai": "xAI",
+        "fine-tuned (github)": "GitHub",
     }
 
-    models = dict(existing)
+    def _cell_text(cell_html: str) -> str:
+        """Return plain text for a table cell, stripping footnote superscripts."""
+        cell_html = re.sub(
+            r"<sup[^>]*>.*?</sup>", "", cell_html, flags=re.DOTALL | re.IGNORECASE
+        )
+        return clean_text(re.sub(r"<[^>]+>", "", cell_html))
 
-    for line in md.splitlines():
-        stripped = line.strip()
-        if not stripped.startswith("|"):
+    def _col_idx(header: list, name: str) -> int | None:
+        """Return the index of *name* in *header*, or None if absent."""
+        try:
+            return header.index(name)
+        except ValueError:
+            return None
+
+    def _col_containing(header: list, fragment: str) -> int | None:
+        """Return the first header index whose text contains *fragment*, or None."""
+        return next((i for i, h in enumerate(header) if fragment in h), None)
+
+    def _cell(row: list, idx: int | None) -> str:
+        """Return the cell value at *idx* in *row*, or an empty string."""
+        if idx is None or idx >= len(row):
+            return ""
+        return row[idx].strip()
+
+    def _price(row: list, idx: int | None) -> str:
+        """Return a price cell value stripped of its leading dollar sign."""
+        return _cell(row, idx).lstrip("$")
+
+    models: dict = {}
+    current_provider: str | None = None
+
+    for m in re.finditer(
+        r"(<h[23][^>]*>.*?</h[23]>|<table[^>]*>.*?</table>)",
+        html,
+        re.DOTALL | re.IGNORECASE,
+    ):
+        elem = m.group()
+        level_m = re.match(r"<(h[23])", elem, re.IGNORECASE)
+
+        if level_m:
+            level = level_m.group(1).lower()
+            text = clean_text(re.sub(r"<[^>]+>", "", elem)).lower()
+            if level == "h2":
+                # h2 boundaries reset the provider context
+                current_provider = None
+            else:
+                # h3: set provider if the heading text matches a known provider
+                current_provider = _PROVIDER_MAP.get(text)
             continue
-        cells = [c.strip() for c in stripped.split("|")[1:-1]]
-        if not cells:
+
+        if not re.match(r"<table", elem, re.IGNORECASE):
             continue
-        name = cells[0]
-        # Skip header rows, separator rows, and empty/known-non-model cells
-        if not name or name.startswith("-") or name.lower() in _SKIP_NAMES:
+        if current_provider is None:
             continue
-        # Model names start with a capital letter; this filters out separator
-        # rows (e.g. "---") and lower-case prose text that may appear in tables.
-        if name[0].isupper() and name not in models:
+
+        # Parse this table into rows of cell texts
+        rows: list[list[str]] = []
+        for row_m in re.finditer(r"<tr[^>]*>(.*?)</tr>", elem, re.DOTALL | re.IGNORECASE):
+            cells = [
+                _cell_text(c.group(1))
+                for c in re.finditer(
+                    r"<(?:td|th)[^>]*>(.*?)</(?:td|th)>",
+                    row_m.group(1),
+                    re.DOTALL | re.IGNORECASE,
+                )
+            ]
+            if cells:
+                rows.append(cells)
+
+        if len(rows) < 2:
+            continue
+
+        header = [h.lower() for h in rows[0]]
+
+        # Skip tables that don't have an Input pricing column
+        if "input" not in header:
+            continue
+
+        input_idx = _col_idx(header, "input")
+        cached_idx = _col_idx(header, "cached input")
+        write_idx = _col_containing(header, "cache write")
+        output_idx = _col_idx(header, "output")
+        status_idx = _col_idx(header, "release status")
+        category_idx = _col_idx(header, "category")
+
+        for row in rows[1:]:
+            name = row[0].strip() if row else ""
+            if not name or name.startswith("-") or name.lower() == "model":
+                continue
+
             models[name] = {
                 "name": name,
-                "provider": "",
-                "release_status": "",
-                "multiplier_paid": "",
-                "multiplier_free": "",
+                "provider": current_provider,
+                "release_status": _cell(row, status_idx),
+                "category": _cell(row, category_idx),
+                "input_price": _price(row, input_idx),
+                "cached_input_price": _price(row, cached_idx),
+                "cache_write_price": _price(row, write_idx),
+                "output_price": _price(row, output_idx),
             }
 
     return models
-
-
-def _parse_html_tables(html: str) -> list[list[list[str]]]:
-    """Extract all ``<table>`` elements from *html* as lists of rows.
-
-    Each table is a list of rows, and each row is a list of cell texts
-    (from ``<th>`` and ``<td>`` elements).  HTML tags inside cells are
-    stripped; ``aria-label`` attributes on SVG icons are preserved as the
-    cell text (e.g. ``"Included"`` / ``"Not included"``).
-    """
-    tables: list[list[list[str]]] = []
-    for table_m in re.finditer(r"<table.*?</table>", html, re.DOTALL):
-        rows: list[list[str]] = []
-        for row_m in re.finditer(r"<tr.*?>(.*?)</tr>", table_m.group(), re.DOTALL):
-            cells: list[str] = []
-            for cell_m in re.finditer(
-                r"<(?:td|th)[^>]*>(.*?)</(?:td|th)>", row_m.group(1), re.DOTALL
-            ):
-                cell_html = cell_m.group(1)
-                # If the cell contains an SVG icon, use its aria-label
-                aria = re.search(r'aria-label="([^"]+)"', cell_html)
-                if aria:
-                    cells.append(aria.group(1))
-                else:
-                    # Strip remaining HTML tags and normalise whitespace
-                    cells.append(clean_text(re.sub(r"<[^>]+>", "", cell_html)))
-            if cells:
-                rows.append(cells)
-        if rows:
-            tables.append(rows)
-    return tables
-
-
-def _enrich_from_supported_models_html(html: str, models: dict) -> None:
-    """Update *models* in-place with release status and multiplier data.
-
-    Parses the rendered HTML of the supported-models page which contains
-    tables with release status and multiplier information that are not
-    available from the markdown API endpoints.
-    """
-    tables = _parse_html_tables(html)
-
-    for table in tables:
-        if not table:
-            continue
-        header = [h.lower() for h in table[0]]
-
-        # Release-status table: "model name | provider | release status | …"
-        if "release status" in header:
-            status_idx = header.index("release status")
-            for row in table[1:]:
-                name = row[0] if row else ""
-                if name in models and status_idx < len(row):
-                    models[name]["release_status"] = row[status_idx]
-
-        # Multiplier table: "model | multiplier for paid plans | multiplier for copilot free"
-        paid_col = next(
-            (i for i, h in enumerate(header) if "paid" in h), None
-        )
-        free_col = next(
-            (i for i, h in enumerate(header) if "free" in h), None
-        )
-        if paid_col is not None or free_col is not None:
-            for row in table[1:]:
-                name = row[0] if row else ""
-                if name in models:
-                    if paid_col is not None and paid_col < len(row):
-                        models[name]["multiplier_paid"] = row[paid_col]
-                    if free_col is not None and free_col < len(row):
-                        models[name]["multiplier_free"] = row[free_col]
 
 
 def scrape_models() -> dict:
-    """Fetch model information from GitHub Docs API endpoints.
+    """Fetch model pricing information from the GitHub Copilot billing page.
 
-    Uses the model-hosting page as the primary source for providers, and the
-    model-comparison page to fill in any models not listed there.  The
-    rendered supported-models HTML page is used to obtain release status
-    and multiplier data.  Returns a dict keyed by model name.
+    Parses the rendered billing/models-and-pricing HTML page to extract model
+    names, providers, release statuses, categories, and per-token pricing.
+    Returns a dict keyed by model name.
     """
-    print("Fetching GitHub Docs model information…")
-
-    hosting_md = _fetch_text(_HOSTING_API_URL)
-    models = _parse_hosting_page(hosting_md)
-
-    comparison_md = _fetch_text(_COMPARISON_API_URL)
-    models = _parse_comparison_page(comparison_md, models)
-
-    supported_html = _fetch_text(_SUPPORTED_MODELS_HTML_URL)
-    _enrich_from_supported_models_html(supported_html, models)
-
+    print("Fetching GitHub Copilot billing/pricing information…")
+    html = _fetch_text(_BILLING_HTML_URL)
+    models = _parse_billing_page(html)
     print(f"Extracted {len(models)} model(s)")
     return models
 
@@ -332,8 +239,12 @@ def compare_models(old: dict, new: dict) -> list:
         desc = f"**New model added**: {name}"
         if m.get("provider"):
             desc += f" (Provider: {m['provider']})"
-        if m.get("multiplier_paid"):
-            desc += f", Multiplier: {m['multiplier_paid']}"
+        if m.get("category"):
+            desc += f", Category: {m['category']}"
+        if m.get("input_price"):
+            desc += f", Input: ${m['input_price']}/1M tokens"
+        if m.get("output_price"):
+            desc += f", Output: ${m['output_price']}/1M tokens"
         changes.append(desc)
 
     for name in sorted(old_names - new_names):
@@ -346,18 +257,25 @@ def compare_models(old: dict, new: dict) -> list:
             field_changes.append(
                 f"Provider changed from '{o.get('provider')}' to '{n.get('provider')}'"
             )
-        if o.get("multiplier_paid") != n.get("multiplier_paid"):
-            field_changes.append(
-                f"Multiplier (paid) changed from '{o.get('multiplier_paid')}' to '{n.get('multiplier_paid')}'"
-            )
-        if o.get("multiplier_free") != n.get("multiplier_free"):
-            field_changes.append(
-                f"Multiplier (free) changed from '{o.get('multiplier_free')}' to '{n.get('multiplier_free')}'"
-            )
         if o.get("release_status") != n.get("release_status"):
             field_changes.append(
                 f"Release status changed from '{o.get('release_status')}' to '{n.get('release_status')}'"
             )
+        if o.get("category") != n.get("category"):
+            field_changes.append(
+                f"Category changed from '{o.get('category')}' to '{n.get('category')}'"
+            )
+        for price_field, label in (
+            ("input_price", "Input price"),
+            ("cached_input_price", "Cached input price"),
+            ("cache_write_price", "Cache write price"),
+            ("output_price", "Output price"),
+        ):
+            if o.get(price_field) != n.get(price_field):
+                field_changes.append(
+                    f"{label} changed from"
+                    f" '${o.get(price_field, '')}' to '${n.get(price_field, '')}' per 1M tokens"
+                )
         if field_changes:
             changes.append(f"**{name}**: " + "; ".join(field_changes))
 
@@ -372,6 +290,9 @@ def generate_html(models: dict, changes_history: list) -> str:
     """Return the full HTML for docs/index.html."""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
+    def _price(val: str) -> str:
+        return f"${val}" if val else "N/A"
+
     model_rows = []
     for name, info in sorted(models.items()):
         model_rows.append(
@@ -379,8 +300,11 @@ def generate_html(models: dict, changes_history: list) -> str:
             f"        <td>{name}</td>\n"
             f"        <td>{info.get('provider', '')}</td>\n"
             f"        <td>{info.get('release_status', '')}</td>\n"
-            f"        <td>{info.get('multiplier_paid', '')}</td>\n"
-            f"        <td>{info.get('multiplier_free', '')}</td>\n"
+            f"        <td>{info.get('category', '')}</td>\n"
+            f"        <td>{_price(info.get('input_price', ''))}</td>\n"
+            f"        <td>{_price(info.get('cached_input_price', ''))}</td>\n"
+            f"        <td>{_price(info.get('cache_write_price', ''))}</td>\n"
+            f"        <td>{_price(info.get('output_price', ''))}</td>\n"
             f"      </tr>"
         )
 
@@ -449,8 +373,8 @@ def generate_html(models: dict, changes_history: list) -> str:
 </head>
 <body>
   <h1>&#x1F916; GitHub Copilot Model Updates</h1>
-  <p>Automatically tracks changes to <a href="{DOCS_URL}">GitHub Copilot's supported AI models</a>,
-  including new models, retired models, and multiplier changes.</p>
+  <p>Automatically tracks changes to <a href="{DOCS_URL}">GitHub Copilot's AI model pricing</a>,
+  including new models, retired models, and pricing changes. All prices are per 1 million tokens.</p>
 
   <div class="subscribe">
     <strong>&#x1F4EC; Subscribe to updates:</strong>
@@ -469,8 +393,11 @@ def generate_html(models: dict, changes_history: list) -> str:
         <th>Model Name</th>
         <th>Provider</th>
         <th>Release Status</th>
-        <th>Multiplier (Paid Plans)</th>
-        <th>Multiplier (Copilot Free)</th>
+        <th>Category</th>
+        <th>Input ($/1M)</th>
+        <th>Cached Input ($/1M)</th>
+        <th>Cache Write ($/1M)</th>
+        <th>Output ($/1M)</th>
       </tr>
     </thead>
     <tbody>
@@ -519,7 +446,7 @@ def generate_rss(changes_history: list) -> str:
   <channel>
     <title>GitHub Copilot Model Updates</title>
     <link>{PAGES_URL}</link>
-    <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
+    <description>Notifications about changes to GitHub Copilot models including new models, removed models, and pricing changes.</description>
     <language>en-us</language>
     <atom:link href="{PAGES_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>{now_rfc}</lastBuildDate>
@@ -591,11 +518,16 @@ def main() -> None:
         for change in changes:
             release_notes += f"- {change}\n"
         release_notes += "\n### Current Models\n\n"
-        release_notes += "| Model | Provider | Multiplier (Paid) |\n"
-        release_notes += "| ----- | -------- | ----------------- |\n"
+        release_notes += "| Model | Provider | Category | Input ($/1M) | Cached Input ($/1M) | Cache Write ($/1M) | Output ($/1M) |\n"
+        release_notes += "| ----- | -------- | -------- | ------------ | ------------------- | ------------------ | ------------- |\n"
         for name, info in sorted(new_models.items()):
+            def _p(field: str) -> str:
+                v = info.get(field, "")
+                return f"${v}" if v else "N/A"
             release_notes += (
-                f"| {name} | {info.get('provider', '')} | {info.get('multiplier_paid', '')} |\n"
+                f"| {name} | {info.get('provider', '')} | {info.get('category', '')} |"
+                f" {_p('input_price')} | {_p('cached_input_price')} |"
+                f" {_p('cache_write_price')} | {_p('output_price')} |\n"
             )
 
         # Write release notes to a temp file for the workflow to consume
