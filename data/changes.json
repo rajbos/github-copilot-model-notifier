@@ -140,5 +140,15 @@
     "items": [
       "**New model added**: GPT-5.5 (Provider: OpenAI), Multiplier: 7.5"
     ]
+  },
+  {
+    "date": "2026-05-01 08:41 UTC",
+    "pub_date": "Fri, 01 May 2026 08:41:47 GMT",
+    "title": "Model Update: 2026-05-01",
+    "tag": "models-2026-05-01-084147",
+    "items": [
+      "**Claude Opus 4.7**: Multiplier (paid) changed from '7.5' to '15'",
+      "**GPT-5.4 nano**: Release status changed from 'GA' to ''"
+    ]
   }
 ]
