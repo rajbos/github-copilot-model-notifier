@@ -118,13 +118,6 @@
     "multiplier_paid": "15",
     "multiplier_free": "Not applicable"
   },
-  "Claude Sonnet 4": {
-    "name": "Claude Sonnet 4",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "1",
-    "multiplier_free": "Not applicable"
-  },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
     "provider": "Anthropic",

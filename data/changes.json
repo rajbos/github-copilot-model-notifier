@@ -150,5 +150,14 @@
       "**Claude Opus 4.7**: Multiplier (paid) changed from '7.5' to '15'",
       "**GPT-5.4 nano**: Release status changed from 'GA' to ''"
     ]
+  },
+  {
+    "date": "2026-05-07 08:56 UTC",
+    "pub_date": "Thu, 07 May 2026 08:56:01 GMT",
+    "title": "Model Update: 2026-05-07",
+    "tag": "models-2026-05-07-085601",
+    "items": [
+      "**Model removed**: Claude Sonnet 4"
+    ]
   }
 ]

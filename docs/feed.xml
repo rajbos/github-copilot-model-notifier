@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 01 May 2026 08:41:47 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 08:56:01 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-05-07</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-07-085601</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Claude Sonnet 4&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Thu, 07 May 2026 08:56:01 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-07-085601</guid>
+    </item>
     <item>
       <title>Model Update: 2026-05-01</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-01-084147</link>
