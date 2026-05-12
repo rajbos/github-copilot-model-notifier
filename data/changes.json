@@ -159,5 +159,16 @@
     "items": [
       "**Model removed**: Claude Sonnet 4"
     ]
+  },
+  {
+    "date": "2026-05-12 08:59 UTC",
+    "pub_date": "Tue, 12 May 2026 08:59:44 GMT",
+    "title": "Model Update: 2026-05-12",
+    "tag": "models-2026-05-12-085944",
+    "items": [
+      "**GPT-4.1**: Release status changed from 'GA' to 'Closing down 2026-06-01'",
+      "**GPT-5.2**: Release status changed from 'GA' to 'Closing down 2026-06-01'",
+      "**GPT-5.2-Codex**: Release status changed from 'GA' to 'Closing down 2026-06-01'"
+    ]
   }
 ]

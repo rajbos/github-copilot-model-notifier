@@ -2,7 +2,7 @@
   "GPT-4.1": {
     "name": "GPT-4.1",
     "provider": "OpenAI",
-    "release_status": "GA",
+    "release_status": "Closing down 2026-06-01",
     "multiplier_paid": "0",
     "multiplier_free": "1"
   },
@@ -16,14 +16,14 @@
   "GPT-5.2": {
     "name": "GPT-5.2",
     "provider": "OpenAI",
-    "release_status": "GA",
+    "release_status": "Closing down 2026-06-01",
     "multiplier_paid": "1",
     "multiplier_free": "Not applicable"
   },
   "GPT-5.2-Codex": {
     "name": "GPT-5.2-Codex",
     "provider": "OpenAI",
-    "release_status": "GA",
+    "release_status": "Closing down 2026-06-01",
     "multiplier_paid": "1",
     "multiplier_free": "Not applicable"
   },
