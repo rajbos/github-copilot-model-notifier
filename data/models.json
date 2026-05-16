@@ -145,12 +145,5 @@
     "release_status": "Public preview",
     "multiplier_paid": "1",
     "multiplier_free": "Not applicable"
-  },
-  "Grok Code Fast 1": {
-    "name": "Grok Code Fast 1",
-    "provider": "xAI",
-    "release_status": "GA",
-    "multiplier_paid": "0.25",
-    "multiplier_free": "1"
   }
 }

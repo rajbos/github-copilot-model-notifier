@@ -170,5 +170,14 @@
       "**GPT-5.2**: Release status changed from 'GA' to 'Closing down 2026-06-01'",
       "**GPT-5.2-Codex**: Release status changed from 'GA' to 'Closing down 2026-06-01'"
     ]
+  },
+  {
+    "date": "2026-05-16 08:36 UTC",
+    "pub_date": "Sat, 16 May 2026 08:36:56 GMT",
+    "title": "Model Update: 2026-05-16",
+    "tag": "models-2026-05-16-083656",
+    "items": [
+      "**Model removed**: Grok Code Fast 1"
+    ]
   }
 ]
