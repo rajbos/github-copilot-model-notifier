@@ -179,5 +179,14 @@
     "items": [
       "**Model removed**: Grok Code Fast 1"
     ]
+  },
+  {
+    "date": "2026-05-20 09:09 UTC",
+    "pub_date": "Wed, 20 May 2026 09:09:45 GMT",
+    "title": "Model Update: 2026-05-20",
+    "tag": "models-2026-05-20-090945",
+    "items": [
+      "**New model added**: Gemini 3.5 Flash (Provider: Google), Multiplier: 14"
+    ]
   }
 ]
