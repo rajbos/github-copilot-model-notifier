@@ -69,13 +69,6 @@
     "multiplier_paid": "0",
     "multiplier_free": "1"
   },
-  "Goldeneye": {
-    "name": "Goldeneye",
-    "provider": "Microsoft",
-    "release_status": "Public preview",
-    "multiplier_paid": "Not applicable",
-    "multiplier_free": "1"
-  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",

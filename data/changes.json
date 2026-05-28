@@ -188,5 +188,14 @@
     "items": [
       "**New model added**: Gemini 3.5 Flash (Provider: Google), Multiplier: 14"
     ]
+  },
+  {
+    "date": "2026-05-28 09:17 UTC",
+    "pub_date": "Thu, 28 May 2026 09:17:20 GMT",
+    "title": "Model Update: 2026-05-28",
+    "tag": "models-2026-05-28-091720",
+    "items": [
+      "**Model removed**: Goldeneye"
+    ]
   }
 ]
