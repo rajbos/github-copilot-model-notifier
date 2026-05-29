@@ -197,5 +197,14 @@
     "items": [
       "**Model removed**: Goldeneye"
     ]
+  },
+  {
+    "date": "2026-05-29 09:12 UTC",
+    "pub_date": "Fri, 29 May 2026 09:12:42 GMT",
+    "title": "Model Update: 2026-05-29",
+    "tag": "models-2026-05-29-091242",
+    "items": [
+      "**New model added**: Claude Opus 4.8 (Provider: Anthropic)"
+    ]
   }
 ]

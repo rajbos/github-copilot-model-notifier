@@ -111,6 +111,13 @@
     "multiplier_paid": "15",
     "multiplier_free": "Not applicable"
   },
+  "Claude Opus 4.8": {
+    "name": "Claude Opus 4.8",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
     "provider": "Anthropic",
