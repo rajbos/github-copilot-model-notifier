@@ -206,5 +206,36 @@
     "items": [
       "**New model added**: Claude Opus 4.8 (Provider: Anthropic)"
     ]
+  },
+  {
+    "date": "2026-05-30 08:50 UTC",
+    "pub_date": "Sat, 30 May 2026 08:50:24 GMT",
+    "title": "Model Update: 2026-05-30",
+    "tag": "models-2026-05-30-085024",
+    "items": [
+      "**New model added**: Qwen2.5",
+      "**Claude Haiku 4.5**: Multiplier (paid) changed from '0.33' to ''; Multiplier (free) changed from '1' to ''",
+      "**Claude Opus 4.5**: Multiplier (paid) changed from '3' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Claude Opus 4.6**: Multiplier (paid) changed from '3' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Claude Opus 4.6 (fast mode) (preview)**: Multiplier (paid) changed from '30' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Claude Opus 4.7**: Multiplier (paid) changed from '15' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Claude Opus 4.8**: Release status changed from '' to 'GA'",
+      "**Claude Sonnet 4.5**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Claude Sonnet 4.6**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-4.1**: Multiplier (paid) changed from '0' to ''; Multiplier (free) changed from '1' to ''",
+      "**GPT-5 mini**: Multiplier (paid) changed from '0' to ''; Multiplier (free) changed from '1' to ''",
+      "**GPT-5.2**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.2-Codex**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.3-Codex**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.4**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.4 mini**: Multiplier (paid) changed from '0.33' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.4 nano**: Multiplier (paid) changed from '0.25' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**GPT-5.5**: Multiplier (paid) changed from '7.5' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Gemini 2.5 Pro**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Gemini 3 Flash**: Multiplier (paid) changed from '0.33' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Gemini 3.1 Pro**: Multiplier (paid) changed from '1' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Gemini 3.5 Flash**: Multiplier (paid) changed from '14' to ''; Multiplier (free) changed from 'Not applicable' to ''",
+      "**Raptor mini**: Multiplier (paid) changed from '0' to ''; Multiplier (free) changed from '1' to ''"
+    ]
   }
 ]
