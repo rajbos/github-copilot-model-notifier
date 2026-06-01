@@ -213,7 +213,6 @@
     "title": "Model Update: 2026-05-30",
     "tag": "models-2026-05-30-085024",
     "items": [
-      "**New model added**: Qwen2.5",
       "**Claude Haiku 4.5**: Multiplier (paid) changed from '0.33' to ''; Multiplier (free) changed from '1' to ''",
       "**Claude Opus 4.5**: Multiplier (paid) changed from '3' to ''; Multiplier (free) changed from 'Not applicable' to ''",
       "**Claude Opus 4.6**: Multiplier (paid) changed from '3' to ''; Multiplier (free) changed from 'Not applicable' to ''",
