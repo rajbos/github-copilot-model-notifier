@@ -236,5 +236,14 @@
       "**Gemini 3.5 Flash**: Multiplier (paid) changed from '14' to ''; Multiplier (free) changed from 'Not applicable' to ''",
       "**Raptor mini**: Multiplier (paid) changed from '0' to ''; Multiplier (free) changed from '1' to ''"
     ]
+  },
+  {
+    "date": "2026-06-01 14:29 UTC",
+    "pub_date": "Mon, 01 Jun 2026 14:29:41 GMT",
+    "title": "Model Update: 2026-06-01",
+    "tag": "models-2026-06-01-142941",
+    "items": [
+      "**New model added**: Qwen2.5"
+    ]
   }
 ]

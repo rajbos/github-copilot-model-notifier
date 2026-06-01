@@ -152,5 +152,12 @@
     "release_status": "GA",
     "multiplier_paid": "",
     "multiplier_free": ""
+  },
+  "Qwen2.5": {
+    "name": "Qwen2.5",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
   }
 }

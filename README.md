@@ -23,7 +23,12 @@ You will receive a notification every time a new release is published.
 
 # How it works
 
-A scheduled GitHub Actions workflow runs every day and scrapes the [GitHub Copilot supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) documentation page.
+A scheduled GitHub Actions workflow runs every day and scrapes the [GitHub Copilot supported models](https://docs.github.com/en/copilot/reference/ai-models/supported-models) documentation. It collects model data from multiple sources:
+
+- **[Model hosting page](https://docs.github.com/en/copilot/reference/ai-models/model-hosting)** — Primary source for model names and their providers (OpenAI, Anthropic, Google, Microsoft, xAI)
+- **[Model comparison page](https://docs.github.com/en/copilot/reference/ai-models/model-comparison)** — Supplementary source; may list models not yet assigned to a provider section
+- **[Supported models HTML page](https://docs.github.com/en/copilot/reference/ai-models/supported-models)** — For release status and pricing multiplier data
+
 When changes are detected (new model, removed model, or updated provider/multiplier), the workflow:
 
 1. Updates [`data/models.json`](data/models.json) with the latest model snapshot.
