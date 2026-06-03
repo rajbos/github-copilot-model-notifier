@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 01 Jun 2026 14:29:41 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 09:39:14 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-06-03</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-03-093914</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: MAI-Code-1-Flash&lt;/li&gt;&lt;li&gt;**New model added**: MAI-Code-1-Flash[^mai-code-1-flash]&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 03 Jun 2026 09:39:14 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-03-093914</guid>
+    </item>
     <item>
       <title>Model Update: 2026-06-01</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-01-142941</link>

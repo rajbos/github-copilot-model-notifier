@@ -153,8 +153,22 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
+  "MAI-Code-1-Flash[^mai-code-1-flash]": {
+    "name": "MAI-Code-1-Flash[^mai-code-1-flash]",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Qwen2.5": {
     "name": "Qwen2.5",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "MAI-Code-1-Flash": {
+    "name": "MAI-Code-1-Flash",
     "provider": "",
     "release_status": "",
     "multiplier_paid": "",

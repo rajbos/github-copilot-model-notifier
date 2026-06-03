@@ -245,5 +245,15 @@
     "items": [
       "**New model added**: Qwen2.5"
     ]
+  },
+  {
+    "date": "2026-06-03 09:39 UTC",
+    "pub_date": "Wed, 03 Jun 2026 09:39:14 GMT",
+    "title": "Model Update: 2026-06-03",
+    "tag": "models-2026-06-03-093914",
+    "items": [
+      "**New model added**: MAI-Code-1-Flash",
+      "**New model added**: MAI-Code-1-Flash[^mai-code-1-flash]"
+    ]
   }
 ]
