@@ -1,11 +1,4 @@
 {
-  "GPT-4.1": {
-    "name": "GPT-4.1",
-    "provider": "OpenAI",
-    "release_status": "Closing down 2026-06-01",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
   "GPT-5 mini": {
     "name": "GPT-5 mini",
     "provider": "OpenAI",

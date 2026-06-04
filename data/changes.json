@@ -255,5 +255,14 @@
       "**New model added**: MAI-Code-1-Flash",
       "**New model added**: MAI-Code-1-Flash[^mai-code-1-flash]"
     ]
+  },
+  {
+    "date": "2026-06-04 09:21 UTC",
+    "pub_date": "Thu, 04 Jun 2026 09:21:38 GMT",
+    "title": "Model Update: 2026-06-04",
+    "tag": "models-2026-06-04-092138",
+    "items": [
+      "**Model removed**: GPT-4.1"
+    ]
   }
 ]
