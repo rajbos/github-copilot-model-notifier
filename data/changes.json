@@ -264,5 +264,15 @@
     "items": [
       "**Model removed**: GPT-4.1"
     ]
+  },
+  {
+    "date": "2026-06-06 08:54 UTC",
+    "pub_date": "Sat, 06 Jun 2026 08:54:53 GMT",
+    "title": "Model Update: 2026-06-06",
+    "tag": "models-2026-06-06-085453",
+    "items": [
+      "**Model removed**: GPT-5.2",
+      "**Model removed**: GPT-5.2-Codex"
+    ]
   }
 ]

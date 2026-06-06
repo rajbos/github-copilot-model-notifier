@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 04 Jun 2026 09:21:38 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2026 08:54:53 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-06-06</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-06-085453</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: GPT-5.2&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.2-Codex&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 06 Jun 2026 08:54:53 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-06-085453</guid>
+    </item>
     <item>
       <title>Model Update: 2026-06-04</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-06-04-092138</link>
