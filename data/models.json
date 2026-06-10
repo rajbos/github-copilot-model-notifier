@@ -62,6 +62,13 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
+  "Claude Sonnet 4.6": {
+    "name": "Claude Sonnet 4.6",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Claude Opus 4.5": {
     "name": "Claude Opus 4.5",
     "provider": "Anthropic",
@@ -97,10 +104,10 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
-  "Claude Sonnet 4.6": {
-    "name": "Claude Sonnet 4.6",
+  "Claude Fable 5": {
+    "name": "Claude Fable 5",
     "provider": "Anthropic",
-    "release_status": "GA",
+    "release_status": "",
     "multiplier_paid": "",
     "multiplier_free": ""
   },

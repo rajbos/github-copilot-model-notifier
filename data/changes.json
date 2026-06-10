@@ -274,5 +274,14 @@
       "**Model removed**: GPT-5.2",
       "**Model removed**: GPT-5.2-Codex"
     ]
+  },
+  {
+    "date": "2026-06-10 09:16 UTC",
+    "pub_date": "Wed, 10 Jun 2026 09:16:03 GMT",
+    "title": "Model Update: 2026-06-10",
+    "tag": "models-2026-06-10-091603",
+    "items": [
+      "**New model added**: Claude Fable 5 (Provider: Anthropic)"
+    ]
   }
 ]
