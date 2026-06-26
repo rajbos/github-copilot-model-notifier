@@ -44,7 +44,7 @@
   "Raptor mini": {
     "name": "Raptor mini",
     "provider": "Microsoft",
-    "release_status": "Public preview",
+    "release_status": "GA",
     "multiplier_paid": "",
     "multiplier_free": ""
   },

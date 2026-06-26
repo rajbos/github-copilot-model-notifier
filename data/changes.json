@@ -283,5 +283,14 @@
     "items": [
       "**New model added**: Claude Fable 5 (Provider: Anthropic)"
     ]
+  },
+  {
+    "date": "2026-06-26 09:08 UTC",
+    "pub_date": "Fri, 26 Jun 2026 09:08:02 GMT",
+    "title": "Model Update: 2026-06-26",
+    "tag": "models-2026-06-26-090802",
+    "items": [
+      "**Raptor mini**: Release status changed from 'Public preview' to 'GA'"
+    ]
   }
 ]
