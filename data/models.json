@@ -83,13 +83,6 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
-  "Claude Opus 4.6 (fast mode) (preview)": {
-    "name": "Claude Opus 4.6 (fast mode) (preview)",
-    "provider": "Anthropic",
-    "release_status": "Public preview",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
   "Claude Opus 4.7": {
     "name": "Claude Opus 4.7",
     "provider": "Anthropic",
@@ -99,6 +92,13 @@
   },
   "Claude Opus 4.8": {
     "name": "Claude Opus 4.8",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Opus 4.8 (fast mode) (preview)": {
+    "name": "Claude Opus 4.8 (fast mode) (preview)",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
