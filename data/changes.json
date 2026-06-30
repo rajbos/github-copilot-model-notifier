@@ -292,5 +292,15 @@
     "items": [
       "**Raptor mini**: Release status changed from 'Public preview' to 'GA'"
     ]
+  },
+  {
+    "date": "2026-06-30 09:09 UTC",
+    "pub_date": "Tue, 30 Jun 2026 09:09:03 GMT",
+    "title": "Model Update: 2026-06-30",
+    "tag": "models-2026-06-30-090903",
+    "items": [
+      "**New model added**: Claude Opus 4.8 (fast mode) (preview) (Provider: Anthropic)",
+      "**Model removed**: Claude Opus 4.6 (fast mode) (preview)"
+    ]
   }
 ]
