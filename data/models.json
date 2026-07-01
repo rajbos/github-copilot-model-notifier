@@ -69,6 +69,13 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
+  "Claude Sonnet 5": {
+    "name": "Claude Sonnet 5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Claude Opus 4.5": {
     "name": "Claude Opus 4.5",
     "provider": "Anthropic",
