@@ -311,5 +311,14 @@
     "items": [
       "**New model added**: Claude Sonnet 5 (Provider: Anthropic)"
     ]
+  },
+  {
+    "date": "2026-07-02 09:05 UTC",
+    "pub_date": "Thu, 02 Jul 2026 09:05:50 GMT",
+    "title": "Model Update: 2026-07-02",
+    "tag": "models-2026-07-02-090550",
+    "items": [
+      "**New model added**: Kimi K2.7 Code"
+    ]
   }
 ]
