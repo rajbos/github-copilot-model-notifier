@@ -320,5 +320,16 @@
     "items": [
       "**New model added**: Kimi K2.7 Code"
     ]
+  },
+  {
+    "date": "2026-07-10 09:07 UTC",
+    "pub_date": "Fri, 10 Jul 2026 09:07:04 GMT",
+    "title": "Model Update: 2026-07-10",
+    "tag": "models-2026-07-10-090704",
+    "items": [
+      "**New model added**: GPT-5.6 Luna (Provider: OpenAI)",
+      "**New model added**: GPT-5.6 Sol (Provider: OpenAI)",
+      "**New model added**: GPT-5.6 Terra (Provider: OpenAI)"
+    ]
   }
 ]
