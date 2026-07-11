@@ -27,6 +27,10 @@ _COMPARISON_API_URL = (
     "https://docs.github.com/api/article/body"
     "?pathname=/en/copilot/reference/ai-models/model-comparison"
 )
+_PRICING_API_URL = (
+    "https://docs.github.com/api/article/body"
+    "?pathname=/en/copilot/reference/copilot-billing/models-and-pricing"
+)
 _SUPPORTED_MODELS_HTML_URL = DOCS_URL
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -206,7 +210,9 @@ def _parse_comparison_page(md: str, existing: dict) -> dict:
         cells = [c.strip() for c in stripped.split("|")[1:-1]]
         if not cells:
             continue
-        name = cells[0]
+        # Strip footnote markers (e.g. "MAI-Code-1-Flash[^note]") so names
+        # dedupe against the footnote-free names from the hosting page.
+        name = _strip_footnotes(cells[0])
         # Skip header rows, separator rows, and empty/known-non-model cells
         if not name or name.startswith("-") or name.lower() in _SKIP_NAMES:
             continue
@@ -294,13 +300,203 @@ def _enrich_from_supported_models_html(html: str, models: dict) -> None:
                         models[name]["multiplier_free"] = row[free_col]
 
 
+def _strip_footnotes(name: str) -> str:
+    """Remove Markdown footnote markers from a model name.
+
+    e.g. ``"Claude Sonnet 5[^promo]"`` -> ``"Claude Sonnet 5"``.
+    """
+    return re.sub(r"\[\^[^\]]*\]", "", name).strip()
+
+
+def _parse_price(raw: str) -> float | None:
+    """Parse a price cell such as ``$1.00`` / ``$0.025`` into a float.
+
+    Returns ``None`` for empty cells or non-numeric placeholders like
+    ``Not applicable``.
+    """
+    if not raw:
+        return None
+    cleaned = raw.replace("$", "").replace(",", "").strip()
+    if not cleaned or cleaned.lower() == "not applicable":
+        return None
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
+
+
+def _iter_markdown_tables(md: str):
+    """Yield ``(header, rows)`` for each pipe-delimited table in *md*.
+
+    ``header`` is a list of lowercased column names; ``rows`` is a list of
+    cell-lists (raw cell text).  Separator rows (``| --- |``) and fully-blank
+    spacer rows are skipped.  A blank line ends the current table.
+    """
+    header: list[str] | None = None
+    rows: list[list[str]] = []
+
+    def _cells(line: str) -> list[str]:
+        return [c.strip() for c in line.strip().split("|")[1:-1]]
+
+    for line in md.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("|"):
+            cells = _cells(stripped)
+            # Separator row, e.g. "| --- | --- |"
+            if cells and all(set(c) <= {"-", ":"} and c for c in cells):
+                continue
+            if header is None:
+                header = [c.lower() for c in cells]
+                continue
+            # Skip fully-blank spacer rows used between data rows.
+            if not any(cells):
+                continue
+            rows.append(cells)
+        else:
+            if header is not None:
+                yield header, rows
+            header, rows = None, []
+
+    if header is not None:
+        yield header, rows
+
+
+def _parse_pricing_markdown(md: str) -> dict:
+    """Parse the Copilot models-and-pricing page markdown into per-model data.
+
+    Returns a dict keyed by model name.  Each value is a ``pricing`` block
+    shaped to match the consumer's ``copilotPricing`` schema::
+
+        {
+            "category": "Lightweight",        # model class, when present
+            "releaseStatus": "GA",            # when present
+            "inputCostPerMillion": 1.0,       # Default tier
+            "cachedInputCostPerMillion": 0.1,
+            "outputCostPerMillion": 6.0,
+            "cacheCreationCostPerMillion": 1.25,   # only when a cache-write column exists
+            "longContext": {                        # only when a Long-context row exists
+                "threshold": "> 200K",
+                "inputCostPerMillion": 2.0,
+                "cachedInputCostPerMillion": 0.2,
+                "outputCostPerMillion": 9.0
+            }
+        }
+    """
+    pricing_by_model: dict = {}
+
+    for header, rows in _iter_markdown_tables(md):
+        # Identify a pricing table by the presence of an Input + Output column.
+        try:
+            input_idx = header.index("input")
+            output_idx = header.index("output")
+        except ValueError:
+            continue
+
+        name_idx = header.index("model") if "model" in header else 0
+        cached_idx = next(
+            (i for i, h in enumerate(header) if "cached input" in h), None
+        )
+        cachewrite_idx = next(
+            (i for i, h in enumerate(header) if "cache write" in h), None
+        )
+        status_idx = next(
+            (i for i, h in enumerate(header) if "release status" in h), None
+        )
+        category_idx = next(
+            (i for i, h in enumerate(header) if "category" in h), None
+        )
+        tier_idx = header.index("tier") if "tier" in header else None
+        threshold_idx = next(
+            (i for i, h in enumerate(header) if "threshold" in h), None
+        )
+
+        def cell(row: list[str], idx: int | None) -> str:
+            return row[idx] if idx is not None and idx < len(row) else ""
+
+        for row in rows:
+            name = _strip_footnotes(cell(row, name_idx))
+            if not name:
+                continue
+
+            in_price = _parse_price(cell(row, input_idx))
+            out_price = _parse_price(cell(row, output_idx))
+            if in_price is None and out_price is None:
+                continue
+
+            tier_value = cell(row, tier_idx).lower()
+            is_long_context = tier_value == "long context"
+
+            block = pricing_by_model.setdefault(name, {})
+
+            # Metadata (release status / category) taken from the Default row.
+            if not is_long_context:
+                status = cell(row, status_idx)
+                category = cell(row, category_idx)
+                if status and "releaseStatus" not in block:
+                    block["releaseStatus"] = status
+                if category and "category" not in block:
+                    block["category"] = category
+
+            tier_data = {
+                "inputCostPerMillion": in_price,
+                "cachedInputCostPerMillion": _parse_price(cell(row, cached_idx)),
+                "outputCostPerMillion": out_price,
+            }
+            cache_write = _parse_price(cell(row, cachewrite_idx))
+            if cache_write is not None:
+                tier_data["cacheCreationCostPerMillion"] = cache_write
+
+            # Drop keys that couldn't be parsed to keep the block clean.
+            tier_data = {k: v for k, v in tier_data.items() if v is not None}
+
+            if is_long_context:
+                threshold = cell(row, threshold_idx)
+                lc: dict[str, object] = dict(tier_data)
+                if threshold and threshold.lower() != "not applicable":
+                    lc["threshold"] = threshold
+                block["longContext"] = lc
+            else:
+                block.update(tier_data)
+                threshold = cell(row, threshold_idx)
+                if threshold and threshold.lower() != "not applicable":
+                    block["threshold"] = threshold
+
+    return pricing_by_model
+
+
+def _enrich_from_pricing(md: str, models: dict) -> None:
+    """Attach a ``pricing`` block to each model found on the pricing page.
+
+    Matches by exact model name first, then case-insensitively.  Additive:
+    models without a pricing-page entry are left untouched.
+    """
+    pricing_by_model = _parse_pricing_markdown(md)
+    if not pricing_by_model:
+        return
+
+    # Case-insensitive lookup of existing model keys, ignoring footnote markers
+    # that may appear in scraped model names (e.g. "MAI-Code-1-Flash[^note]").
+    lower_index = {_strip_footnotes(name).lower(): name for name in models}
+
+    for price_name, block in pricing_by_model.items():
+        target = None
+        if price_name in models:
+            target = price_name
+        else:
+            target = lower_index.get(price_name.lower())
+        if target is not None and block:
+            models[target]["pricing"] = block
+
+
 def scrape_models() -> dict:
     """Fetch model information from GitHub Docs API endpoints.
 
     Uses the model-hosting page as the primary source for providers, and the
     model-comparison page to fill in any models not listed there.  The
     rendered supported-models HTML page is used to obtain release status
-    and multiplier data.  Returns a dict keyed by model name.
+    and multiplier data.  The models-and-pricing page supplies per-token
+    pricing (Default and optional Long-context tiers).  Returns a dict keyed
+    by model name.
     """
     print("Fetching GitHub Docs model information…")
 
@@ -312,6 +508,12 @@ def scrape_models() -> dict:
 
     supported_html = _fetch_text(_SUPPORTED_MODELS_HTML_URL)
     _enrich_from_supported_models_html(supported_html, models)
+
+    try:
+        pricing_md = _fetch_text(_PRICING_API_URL)
+        _enrich_from_pricing(pricing_md, models)
+    except Exception as e:  # pricing is additive; don't fail the whole run
+        print(f"Warning: could not fetch/parse pricing page: {e}")
 
     print(f"Extracted {len(models)} model(s)")
     return models
@@ -358,6 +560,8 @@ def compare_models(old: dict, new: dict) -> list:
             field_changes.append(
                 f"Release status changed from '{o.get('release_status')}' to '{n.get('release_status')}'"
             )
+        if o.get("pricing") != n.get("pricing"):
+            field_changes.append("Pricing updated")
         if field_changes:
             changes.append(f"**{name}**: " + "; ".join(field_changes))
 
