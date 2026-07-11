@@ -523,6 +523,26 @@ def scrape_models() -> dict:
 # Comparison
 # ---------------------------------------------------------------------------
 
+def _format_price(value) -> str:
+    if value is None:
+        return ""
+    try:
+        return f"${float(value):g}"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def _format_pricing_summary(pricing: dict | None) -> str:
+    """Return a short human-readable summary of a model's Default-tier pricing."""
+    if not pricing:
+        return ""
+    in_price = _format_price(pricing.get("inputCostPerMillion"))
+    out_price = _format_price(pricing.get("outputCostPerMillion"))
+    if not in_price and not out_price:
+        return ""
+    return f"{in_price} in / {out_price} out per 1M tokens"
+
+
 def compare_models(old: dict, new: dict) -> list:
     """Return a human-readable list of changes between *old* and *new* data."""
     changes = []
@@ -536,6 +556,9 @@ def compare_models(old: dict, new: dict) -> list:
             desc += f" (Provider: {m['provider']})"
         if m.get("multiplier_paid"):
             desc += f", Multiplier: {m['multiplier_paid']}"
+        pricing_summary = _format_pricing_summary(m.get("pricing"))
+        if pricing_summary:
+            desc += f", Pricing: {pricing_summary}"
         changes.append(desc)
 
     for name in sorted(old_names - new_names):
@@ -561,7 +584,16 @@ def compare_models(old: dict, new: dict) -> list:
                 f"Release status changed from '{o.get('release_status')}' to '{n.get('release_status')}'"
             )
         if o.get("pricing") != n.get("pricing"):
-            field_changes.append("Pricing updated")
+            old_summary = _format_pricing_summary(o.get("pricing"))
+            new_summary = _format_pricing_summary(n.get("pricing"))
+            if old_summary and new_summary and old_summary != new_summary:
+                field_changes.append(f"Pricing changed from '{old_summary}' to '{new_summary}'")
+            elif new_summary and not old_summary:
+                field_changes.append(f"Pricing added: {new_summary}")
+            elif old_summary and not new_summary:
+                field_changes.append("Pricing removed")
+            else:
+                field_changes.append("Pricing updated")
         if field_changes:
             changes.append(f"**{name}**: " + "; ".join(field_changes))
 
@@ -795,11 +827,13 @@ def main() -> None:
         for change in changes:
             release_notes += f"- {change}\n"
         release_notes += "\n### Current Models\n\n"
-        release_notes += "| Model | Provider | Multiplier (Paid) |\n"
-        release_notes += "| ----- | -------- | ----------------- |\n"
+        release_notes += "| Model | Provider | Multiplier (Paid) | Pricing (per 1M tokens) |\n"
+        release_notes += "| ----- | -------- | ----------------- | ------------------------ |\n"
         for name, info in sorted(new_models.items()):
+            pricing_summary = _format_pricing_summary(info.get("pricing"))
             release_notes += (
-                f"| {name} | {info.get('provider', '')} | {info.get('multiplier_paid', '')} |\n"
+                f"| {name} | {info.get('provider', '')} | {info.get('multiplier_paid', '')} "
+                f"| {pricing_summary} |\n"
             )
 
         # Write release notes to a temp file for the workflow to consume
