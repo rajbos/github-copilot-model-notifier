@@ -294,13 +294,42 @@
     ]
   },
   {
-    "date": "2026-06-30 09:07 UTC",
-    "pub_date": "Tue, 30 Jun 2026 09:07:00 GMT",
+    "date": "2026-06-30 09:09 UTC",
+    "pub_date": "Tue, 30 Jun 2026 09:09:03 GMT",
     "title": "Model Update: 2026-06-30",
-    "tag": "models-2026-06-30-090700",
+    "tag": "models-2026-06-30-090903",
     "items": [
       "**New model added**: Claude Opus 4.8 (fast mode) (preview) (Provider: Anthropic)",
       "**Model removed**: Claude Opus 4.6 (fast mode) (preview)"
+    ]
+  },
+  {
+    "date": "2026-07-01 09:10 UTC",
+    "pub_date": "Wed, 01 Jul 2026 09:10:03 GMT",
+    "title": "Model Update: 2026-07-01",
+    "tag": "models-2026-07-01-091003",
+    "items": [
+      "**New model added**: Claude Sonnet 5 (Provider: Anthropic)"
+    ]
+  },
+  {
+    "date": "2026-07-02 09:05 UTC",
+    "pub_date": "Thu, 02 Jul 2026 09:05:50 GMT",
+    "title": "Model Update: 2026-07-02",
+    "tag": "models-2026-07-02-090550",
+    "items": [
+      "**New model added**: Kimi K2.7 Code"
+    ]
+  },
+  {
+    "date": "2026-07-10 09:07 UTC",
+    "pub_date": "Fri, 10 Jul 2026 09:07:04 GMT",
+    "title": "Model Update: 2026-07-10",
+    "tag": "models-2026-07-10-090704",
+    "items": [
+      "**New model added**: GPT-5.6 Luna (Provider: OpenAI)",
+      "**New model added**: GPT-5.6 Sol (Provider: OpenAI)",
+      "**New model added**: GPT-5.6 Terra (Provider: OpenAI)"
     ]
   }
 ]

@@ -41,6 +41,27 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
+  "GPT-5.6 Luna": {
+    "name": "GPT-5.6 Luna",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.6 Sol": {
+    "name": "GPT-5.6 Sol",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.6 Terra": {
+    "name": "GPT-5.6 Terra",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Raptor mini": {
     "name": "Raptor mini",
     "provider": "Microsoft",
@@ -64,6 +85,13 @@
   },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 5": {
+    "name": "Claude Sonnet 5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
@@ -148,6 +176,13 @@
   },
   "Qwen2.5": {
     "name": "Qwen2.5",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Kimi K2.7 Code": {
+    "name": "Kimi K2.7 Code",
     "provider": "",
     "release_status": "",
     "multiplier_paid": "",
