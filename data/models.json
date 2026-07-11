@@ -6,20 +6,6 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
-  "GPT-5.2": {
-    "name": "GPT-5.2",
-    "provider": "OpenAI",
-    "release_status": "Closing down 2026-06-01",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
-  "GPT-5.2-Codex": {
-    "name": "GPT-5.2-Codex",
-    "provider": "OpenAI",
-    "release_status": "Closing down 2026-06-01",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
   "GPT-5.3-Codex": {
     "name": "GPT-5.3-Codex",
     "provider": "OpenAI",
@@ -55,10 +41,31 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
+  "GPT-5.6 Luna": {
+    "name": "GPT-5.6 Luna",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.6 Sol": {
+    "name": "GPT-5.6 Sol",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "GPT-5.6 Terra": {
+    "name": "GPT-5.6 Terra",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Raptor mini": {
     "name": "Raptor mini",
     "provider": "Microsoft",
-    "release_status": "Public preview",
+    "release_status": "GA",
     "multiplier_paid": "",
     "multiplier_free": ""
   },
@@ -71,6 +78,20 @@
   },
   "Claude Sonnet 4.5": {
     "name": "Claude Sonnet 4.5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 4.6": {
+    "name": "Claude Sonnet 4.6",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Sonnet 5": {
+    "name": "Claude Sonnet 5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
@@ -90,13 +111,6 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
-  "Claude Opus 4.6 (fast mode) (preview)": {
-    "name": "Claude Opus 4.6 (fast mode) (preview)",
-    "provider": "Anthropic",
-    "release_status": "Public preview",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
   "Claude Opus 4.7": {
     "name": "Claude Opus 4.7",
     "provider": "Anthropic",
@@ -111,10 +125,17 @@
     "multiplier_paid": "",
     "multiplier_free": ""
   },
-  "Claude Sonnet 4.6": {
-    "name": "Claude Sonnet 4.6",
+  "Claude Opus 4.8 (fast mode) (preview)": {
+    "name": "Claude Opus 4.8 (fast mode) (preview)",
     "provider": "Anthropic",
     "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Claude Fable 5": {
+    "name": "Claude Fable 5",
+    "provider": "Anthropic",
+    "release_status": "",
     "multiplier_paid": "",
     "multiplier_free": ""
   },
@@ -155,6 +176,13 @@
   },
   "Qwen2.5": {
     "name": "Qwen2.5",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
+  "Kimi K2.7 Code": {
+    "name": "Kimi K2.7 Code",
     "provider": "",
     "release_status": "",
     "multiplier_paid": "",
