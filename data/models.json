@@ -4,175 +4,402 @@
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.25,
+      "cachedInputCostPerMillion": 0.025,
+      "outputCostPerMillion": 2.0
+    }
   },
   "GPT-5.3-Codex": {
     "name": "GPT-5.3-Codex",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 1.75,
+      "cachedInputCostPerMillion": 0.175,
+      "outputCostPerMillion": 14.0
+    }
   },
   "GPT-5.4": {
     "name": "GPT-5.4",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 2.5,
+      "cachedInputCostPerMillion": 0.25,
+      "outputCostPerMillion": 15.0,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 5.0,
+        "cachedInputCostPerMillion": 0.5,
+        "outputCostPerMillion": 22.5,
+        "threshold": "> 272K"
+      }
+    }
   },
   "GPT-5.4 mini": {
     "name": "GPT-5.4 mini",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.75,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 4.5
+    }
   },
   "GPT-5.4 nano": {
     "name": "GPT-5.4 nano",
     "provider": "OpenAI",
     "release_status": "",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.2,
+      "cachedInputCostPerMillion": 0.02,
+      "outputCostPerMillion": 1.25
+    }
   },
   "GPT-5.5": {
     "name": "GPT-5.5",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 30.0,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 10.0,
+        "cachedInputCostPerMillion": 1.0,
+        "outputCostPerMillion": 45.0,
+        "threshold": "> 272K"
+      }
+    }
   },
   "GPT-5.6 Luna": {
     "name": "GPT-5.6 Luna",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 1.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 6.0,
+      "threshold": "\u2264 200K",
+      "longContext": {
+        "inputCostPerMillion": 2.0,
+        "cachedInputCostPerMillion": 0.2,
+        "outputCostPerMillion": 9.0,
+        "threshold": "> 200K"
+      }
+    }
   },
   "GPT-5.6 Sol": {
     "name": "GPT-5.6 Sol",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 30.0,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 10.0,
+        "cachedInputCostPerMillion": 1.0,
+        "outputCostPerMillion": 45.0,
+        "threshold": "> 272K"
+      }
+    }
   },
   "GPT-5.6 Terra": {
     "name": "GPT-5.6 Terra",
     "provider": "OpenAI",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 2.5,
+      "cachedInputCostPerMillion": 0.25,
+      "outputCostPerMillion": 15.0,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 5.0,
+        "cachedInputCostPerMillion": 0.5,
+        "outputCostPerMillion": 22.5,
+        "threshold": "> 272K"
+      }
+    }
   },
   "Raptor mini": {
     "name": "Raptor mini",
     "provider": "Microsoft",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 0.25,
+      "cachedInputCostPerMillion": 0.025,
+      "outputCostPerMillion": 2.0
+    }
   },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 1.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 5.0,
+      "cacheCreationCostPerMillion": 1.25
+    }
   },
   "Claude Sonnet 4.5": {
     "name": "Claude Sonnet 4.5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 3.0,
+      "cachedInputCostPerMillion": 0.3,
+      "outputCostPerMillion": 15.0,
+      "cacheCreationCostPerMillion": 3.75
+    }
   },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 3.0,
+      "cachedInputCostPerMillion": 0.3,
+      "outputCostPerMillion": 15.0,
+      "cacheCreationCostPerMillion": 3.75
+    }
   },
   "Claude Sonnet 5": {
     "name": "Claude Sonnet 5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.2,
+      "outputCostPerMillion": 10.0,
+      "cacheCreationCostPerMillion": 2.5
+    }
   },
   "Claude Opus 4.5": {
     "name": "Claude Opus 4.5",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 25.0,
+      "cacheCreationCostPerMillion": 6.25
+    }
   },
   "Claude Opus 4.6": {
     "name": "Claude Opus 4.6",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 25.0,
+      "cacheCreationCostPerMillion": 6.25
+    }
   },
   "Claude Opus 4.7": {
     "name": "Claude Opus 4.7",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 25.0,
+      "cacheCreationCostPerMillion": 6.25
+    }
   },
   "Claude Opus 4.8": {
     "name": "Claude Opus 4.8",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 25.0,
+      "cacheCreationCostPerMillion": 6.25
+    }
   },
   "Claude Opus 4.8 (fast mode) (preview)": {
     "name": "Claude Opus 4.8 (fast mode) (preview)",
     "provider": "Anthropic",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 10.0,
+      "cachedInputCostPerMillion": 1.0,
+      "outputCostPerMillion": 50.0,
+      "cacheCreationCostPerMillion": 12.5
+    }
   },
   "Claude Fable 5": {
     "name": "Claude Fable 5",
     "provider": "Anthropic",
     "release_status": "",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 10.0,
+      "cachedInputCostPerMillion": 1.0,
+      "outputCostPerMillion": 50.0,
+      "cacheCreationCostPerMillion": 12.5
+    }
   },
   "Gemini 2.5 Pro": {
     "name": "Gemini 2.5 Pro",
     "provider": "Google",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 1.25,
+      "cachedInputCostPerMillion": 0.125,
+      "outputCostPerMillion": 10.0
+    }
   },
   "Gemini 3 Flash": {
     "name": "Gemini 3 Flash",
     "provider": "Google",
     "release_status": "Public preview",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "Public preview",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.5,
+      "cachedInputCostPerMillion": 0.05,
+      "outputCostPerMillion": 3.0
+    }
   },
   "Gemini 3.1 Pro": {
     "name": "Gemini 3.1 Pro",
     "provider": "Google",
     "release_status": "Public preview",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "Public preview",
+      "category": "Powerful",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.2,
+      "outputCostPerMillion": 12.0,
+      "threshold": "\u2264 200K",
+      "longContext": {
+        "inputCostPerMillion": 4.0,
+        "cachedInputCostPerMillion": 0.4,
+        "outputCostPerMillion": 18.0,
+        "threshold": "> 200K"
+      }
+    }
   },
   "Gemini 3.5 Flash": {
     "name": "Gemini 3.5 Flash",
     "provider": "Google",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 1.5,
+      "cachedInputCostPerMillion": 0.15,
+      "outputCostPerMillion": 9.0
+    }
   },
-  "MAI-Code-1-Flash[^mai-code-1-flash]": {
-    "name": "MAI-Code-1-Flash[^mai-code-1-flash]",
+  "MAI-Code-1-Flash": {
+    "name": "MAI-Code-1-Flash",
     "provider": "",
     "release_status": "",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.75,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 4.5
+    }
   },
   "Qwen2.5": {
     "name": "Qwen2.5",
@@ -186,13 +413,13 @@
     "provider": "",
     "release_status": "",
     "multiplier_paid": "",
-    "multiplier_free": ""
-  },
-  "MAI-Code-1-Flash": {
-    "name": "MAI-Code-1-Flash",
-    "provider": "",
-    "release_status": "",
-    "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 0.95,
+      "cachedInputCostPerMillion": 0.19,
+      "outputCostPerMillion": 4.0
+    }
   }
 }

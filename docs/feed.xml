@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 10 Jul 2026 09:07:04 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2026 20:10:22 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-07-11</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-11-201022</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: MAI-Code-1-Flash[^mai-code-1-flash]&lt;/li&gt;&lt;li&gt;**Claude Fable 5**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Haiku 4.5**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Opus 4.5**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Opus 4.6**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Opus 4.7**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Opus 4.8**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Opus 4.8 (fast mode) (preview)**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Sonnet 4.5**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Sonnet 4.6**: Pricing updated&lt;/li&gt;&lt;li&gt;**Claude Sonnet 5**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5 mini**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.3-Codex**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.4**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.4 mini**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.4 nano**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.5**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.6 Luna**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.6 Sol**: Pricing updated&lt;/li&gt;&lt;li&gt;**GPT-5.6 Terra**: Pricing updated&lt;/li&gt;&lt;li&gt;**Gemini 2.5 Pro**: Pricing updated&lt;/li&gt;&lt;li&gt;**Gemini 3 Flash**: Pricing updated&lt;/li&gt;&lt;li&gt;**Gemini 3.1 Pro**: Pricing updated&lt;/li&gt;&lt;li&gt;**Gemini 3.5 Flash**: Pricing updated&lt;/li&gt;&lt;li&gt;**Kimi K2.7 Code**: Pricing updated&lt;/li&gt;&lt;li&gt;**MAI-Code-1-Flash**: Pricing updated&lt;/li&gt;&lt;li&gt;**Raptor mini**: Pricing updated&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 11 Jul 2026 20:10:22 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-11-201022</guid>
+    </item>
     <item>
       <title>Model Update: 2026-07-10</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-10-090704</link>

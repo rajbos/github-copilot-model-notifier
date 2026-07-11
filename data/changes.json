@@ -331,5 +331,40 @@
       "**New model added**: GPT-5.6 Sol (Provider: OpenAI)",
       "**New model added**: GPT-5.6 Terra (Provider: OpenAI)"
     ]
+  },
+  {
+    "date": "2026-07-11 20:10 UTC",
+    "pub_date": "Sat, 11 Jul 2026 20:10:22 GMT",
+    "title": "Model Update: 2026-07-11",
+    "tag": "models-2026-07-11-201022",
+    "items": [
+      "**Model removed**: MAI-Code-1-Flash[^mai-code-1-flash]",
+      "**Claude Fable 5**: Pricing updated",
+      "**Claude Haiku 4.5**: Pricing updated",
+      "**Claude Opus 4.5**: Pricing updated",
+      "**Claude Opus 4.6**: Pricing updated",
+      "**Claude Opus 4.7**: Pricing updated",
+      "**Claude Opus 4.8**: Pricing updated",
+      "**Claude Opus 4.8 (fast mode) (preview)**: Pricing updated",
+      "**Claude Sonnet 4.5**: Pricing updated",
+      "**Claude Sonnet 4.6**: Pricing updated",
+      "**Claude Sonnet 5**: Pricing updated",
+      "**GPT-5 mini**: Pricing updated",
+      "**GPT-5.3-Codex**: Pricing updated",
+      "**GPT-5.4**: Pricing updated",
+      "**GPT-5.4 mini**: Pricing updated",
+      "**GPT-5.4 nano**: Pricing updated",
+      "**GPT-5.5**: Pricing updated",
+      "**GPT-5.6 Luna**: Pricing updated",
+      "**GPT-5.6 Sol**: Pricing updated",
+      "**GPT-5.6 Terra**: Pricing updated",
+      "**Gemini 2.5 Pro**: Pricing updated",
+      "**Gemini 3 Flash**: Pricing updated",
+      "**Gemini 3.1 Pro**: Pricing updated",
+      "**Gemini 3.5 Flash**: Pricing updated",
+      "**Kimi K2.7 Code**: Pricing updated",
+      "**MAI-Code-1-Flash**: Pricing updated",
+      "**Raptor mini**: Pricing updated"
+    ]
   }
 ]
