@@ -366,5 +366,14 @@
       "**MAI-Code-1-Flash**: Pricing updated",
       "**Raptor mini**: Pricing updated"
     ]
+  },
+  {
+    "date": "2026-07-14 08:45 UTC",
+    "pub_date": "Tue, 14 Jul 2026 08:45:14 GMT",
+    "title": "Model Update: 2026-07-14",
+    "tag": "models-2026-07-14-084514",
+    "items": [
+      "**Kimi K2.7 Code**: Release status changed from '' to 'GA'"
+    ]
   }
 ]
