@@ -375,5 +375,14 @@
     "items": [
       "**Kimi K2.7 Code**: Release status changed from '' to 'GA'"
     ]
+  },
+  {
+    "date": "2026-07-15 08:47 UTC",
+    "pub_date": "Wed, 15 Jul 2026 08:47:55 GMT",
+    "title": "Model Update: 2026-07-15",
+    "tag": "models-2026-07-15-084755",
+    "items": [
+      "**Raptor mini**: Provider changed from 'Microsoft' to ''"
+    ]
   }
 ]

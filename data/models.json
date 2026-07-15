@@ -160,20 +160,6 @@
       }
     }
   },
-  "Raptor mini": {
-    "name": "Raptor mini",
-    "provider": "Microsoft",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 0.25,
-      "cachedInputCostPerMillion": 0.025,
-      "outputCostPerMillion": 2.0
-    }
-  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
@@ -407,6 +393,20 @@
     "release_status": "",
     "multiplier_paid": "",
     "multiplier_free": ""
+  },
+  "Raptor mini": {
+    "name": "Raptor mini",
+    "provider": "",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 0.25,
+      "cachedInputCostPerMillion": 0.025,
+      "outputCostPerMillion": 2.0
+    }
   },
   "Kimi K2.7 Code": {
     "name": "Kimi K2.7 Code",

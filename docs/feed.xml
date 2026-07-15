@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 14 Jul 2026 08:45:14 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 08:47:55 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-07-15</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-15-084755</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Raptor mini**: Provider changed from 'Microsoft' to ''&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 15 Jul 2026 08:47:55 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-15-084755</guid>
+    </item>
     <item>
       <title>Model Update: 2026-07-14</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-14-084514</link>
