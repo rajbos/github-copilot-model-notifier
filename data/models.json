@@ -295,6 +295,21 @@
       "cacheCreationCostPerMillion": 12.5
     }
   },
+  "Claude Opus 5": {
+    "name": "Claude Opus 5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 5.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 25.0,
+      "cacheCreationCostPerMillion": 6.25
+    }
+  },
   "Claude Fable 5": {
     "name": "Claude Fable 5",
     "provider": "Anthropic",

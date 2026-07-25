@@ -393,5 +393,14 @@
     "items": [
       "**New model added**: Gemini 3.6 Flash (Provider: Google), Pricing: $1.5 in / $7.5 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-07-25 08:56 UTC",
+    "pub_date": "Sat, 25 Jul 2026 08:56:18 GMT",
+    "title": "Model Update: 2026-07-25",
+    "tag": "models-2026-07-25-085618",
+    "items": [
+      "**New model added**: Claude Opus 5 (Provider: Anthropic), Pricing: $5 in / $25 out per 1M tokens"
+    ]
   }
 ]
