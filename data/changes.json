@@ -402,5 +402,14 @@
     "items": [
       "**New model added**: Claude Opus 5 (Provider: Anthropic), Pricing: $5 in / $25 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-07-29 08:58 UTC",
+    "pub_date": "Wed, 29 Jul 2026 08:58:46 GMT",
+    "title": "Model Update: 2026-07-29",
+    "tag": "models-2026-07-29-085846",
+    "items": [
+      "**New model added**: Grok 4.5 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens"
+    ]
   }
 ]

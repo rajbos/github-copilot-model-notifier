@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 25 Jul 2026 08:56:18 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 08:58:46 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-07-29</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-29-085846</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Grok 4.5 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 29 Jul 2026 08:58:46 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-29-085846</guid>
+    </item>
     <item>
       <title>Model Update: 2026-07-25</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-25-085618</link>
