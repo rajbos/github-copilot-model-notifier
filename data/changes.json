@@ -411,5 +411,15 @@
     "items": [
       "**New model added**: Grok 4.5 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-07-31 09:01 UTC",
+    "pub_date": "Fri, 31 Jul 2026 09:01:48 GMT",
+    "title": "Model Update: 2026-07-31",
+    "tag": "models-2026-07-31-090148",
+    "items": [
+      "**GPT-5.6 Luna**: Pricing changed from '$1 in / $6 out per 1M tokens' to '$0.2 in / $1.2 out per 1M tokens'",
+      "**GPT-5.6 Terra**: Pricing changed from '$2.5 in / $15 out per 1M tokens' to '$2 in / $12 out per 1M tokens'"
+    ]
   }
 ]

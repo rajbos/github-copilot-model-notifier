@@ -106,14 +106,14 @@
     "pricing": {
       "releaseStatus": "GA",
       "category": "Lightweight",
-      "inputCostPerMillion": 1.0,
-      "cachedInputCostPerMillion": 0.1,
-      "outputCostPerMillion": 6.0,
+      "inputCostPerMillion": 0.2,
+      "cachedInputCostPerMillion": 0.02,
+      "outputCostPerMillion": 1.2,
       "threshold": "\u2264 200K",
       "longContext": {
-        "inputCostPerMillion": 2.0,
-        "cachedInputCostPerMillion": 0.2,
-        "outputCostPerMillion": 9.0,
+        "inputCostPerMillion": 0.4,
+        "cachedInputCostPerMillion": 0.04,
+        "outputCostPerMillion": 1.8,
         "threshold": "> 200K"
       }
     }
@@ -148,14 +148,14 @@
     "pricing": {
       "releaseStatus": "GA",
       "category": "Versatile",
-      "inputCostPerMillion": 2.5,
-      "cachedInputCostPerMillion": 0.25,
-      "outputCostPerMillion": 15.0,
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.2,
+      "outputCostPerMillion": 12.0,
       "threshold": "\u2264 272K",
       "longContext": {
-        "inputCostPerMillion": 5.0,
-        "cachedInputCostPerMillion": 0.5,
-        "outputCostPerMillion": 22.5,
+        "inputCostPerMillion": 4.0,
+        "cachedInputCostPerMillion": 0.4,
+        "outputCostPerMillion": 18.0,
         "threshold": "> 272K"
       }
     }

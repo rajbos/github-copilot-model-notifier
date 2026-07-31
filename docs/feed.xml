@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 29 Jul 2026 08:58:46 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 09:01:48 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-07-31</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-31-090148</link>
+      <description>&lt;ul&gt;&lt;li&gt;**GPT-5.6 Luna**: Pricing changed from '$1 in / $6 out per 1M tokens' to '$0.2 in / $1.2 out per 1M tokens'&lt;/li&gt;&lt;li&gt;**GPT-5.6 Terra**: Pricing changed from '$2.5 in / $15 out per 1M tokens' to '$2 in / $12 out per 1M tokens'&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Fri, 31 Jul 2026 09:01:48 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-31-090148</guid>
+    </item>
     <item>
       <title>Model Update: 2026-07-29</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-29-085846</link>
