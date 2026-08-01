@@ -421,5 +421,15 @@
       "**GPT-5.6 Luna**: Pricing changed from '$1 in / $6 out per 1M tokens' to '$0.2 in / $1.2 out per 1M tokens'",
       "**GPT-5.6 Terra**: Pricing changed from '$2.5 in / $15 out per 1M tokens' to '$2 in / $12 out per 1M tokens'"
     ]
+  },
+  {
+    "date": "2026-08-01 08:47 UTC",
+    "pub_date": "Sat, 01 Aug 2026 08:47:37 GMT",
+    "title": "Model Update: 2026-08-01",
+    "tag": "models-2026-08-01-084737",
+    "items": [
+      "**Model removed**: Gemini 2.5 Pro",
+      "**Model removed**: Gemini 3 Flash"
+    ]
   }
 ]

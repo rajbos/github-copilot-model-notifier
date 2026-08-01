@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 31 Jul 2026 09:01:48 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2026 08:47:37 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-08-01</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-01-084737</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Gemini 2.5 Pro&lt;/li&gt;&lt;li&gt;**Model removed**: Gemini 3 Flash&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 01 Aug 2026 08:47:37 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-01-084737</guid>
+    </item>
     <item>
       <title>Model Update: 2026-07-31</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-07-31-090148</link>

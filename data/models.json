@@ -325,34 +325,6 @@
       "cacheCreationCostPerMillion": 12.5
     }
   },
-  "Gemini 2.5 Pro": {
-    "name": "Gemini 2.5 Pro",
-    "provider": "Google",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Powerful",
-      "inputCostPerMillion": 1.25,
-      "cachedInputCostPerMillion": 0.125,
-      "outputCostPerMillion": 10.0
-    }
-  },
-  "Gemini 3 Flash": {
-    "name": "Gemini 3 Flash",
-    "provider": "Google",
-    "release_status": "Public preview",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "Public preview",
-      "category": "Lightweight",
-      "inputCostPerMillion": 0.5,
-      "cachedInputCostPerMillion": 0.05,
-      "outputCostPerMillion": 3.0
-    }
-  },
   "Gemini 3.1 Pro": {
     "name": "Gemini 3.1 Pro",
     "provider": "Google",
