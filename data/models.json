@@ -109,11 +109,13 @@
       "inputCostPerMillion": 0.2,
       "cachedInputCostPerMillion": 0.02,
       "outputCostPerMillion": 1.2,
+      "cacheCreationCostPerMillion": 0.25,
       "threshold": "\u2264 200K",
       "longContext": {
         "inputCostPerMillion": 0.4,
         "cachedInputCostPerMillion": 0.04,
         "outputCostPerMillion": 1.8,
+        "cacheCreationCostPerMillion": 0.5,
         "threshold": "> 200K"
       }
     }
@@ -130,11 +132,13 @@
       "inputCostPerMillion": 5.0,
       "cachedInputCostPerMillion": 0.5,
       "outputCostPerMillion": 30.0,
+      "cacheCreationCostPerMillion": 6.25,
       "threshold": "\u2264 272K",
       "longContext": {
         "inputCostPerMillion": 10.0,
         "cachedInputCostPerMillion": 1.0,
         "outputCostPerMillion": 45.0,
+        "cacheCreationCostPerMillion": 12.5,
         "threshold": "> 272K"
       }
     }
@@ -151,11 +155,13 @@
       "inputCostPerMillion": 2.0,
       "cachedInputCostPerMillion": 0.2,
       "outputCostPerMillion": 12.0,
+      "cacheCreationCostPerMillion": 2.5,
       "threshold": "\u2264 272K",
       "longContext": {
         "inputCostPerMillion": 4.0,
         "cachedInputCostPerMillion": 0.4,
         "outputCostPerMillion": 18.0,
+        "cacheCreationCostPerMillion": 5.0,
         "threshold": "> 272K"
       }
     }
