@@ -442,5 +442,14 @@
       "**GPT-5.6 Sol**: Pricing updated",
       "**GPT-5.6 Terra**: Pricing updated"
     ]
+  },
+  {
+    "date": "2026-08-07 08:24 UTC",
+    "pub_date": "Fri, 07 Aug 2026 08:24:48 GMT",
+    "title": "Model Update: 2026-08-07",
+    "tag": "models-2026-08-07-082448",
+    "items": [
+      "**New model added**: Kimi K3, Pricing: $3 in / $15 out per 1M tokens"
+    ]
   }
 ]

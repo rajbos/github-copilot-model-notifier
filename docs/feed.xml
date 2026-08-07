@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 04 Aug 2026 08:58:03 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2026 08:24:48 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-08-07</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-07-082448</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Kimi K3, Pricing: $3 in / $15 out per 1M tokens&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Fri, 07 Aug 2026 08:24:48 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-07-082448</guid>
+    </item>
     <item>
       <title>Model Update: 2026-08-04</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-04-085803</link>
