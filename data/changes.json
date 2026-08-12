@@ -451,5 +451,14 @@
     "items": [
       "**New model added**: Kimi K3, Pricing: $3 in / $15 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-08-12 08:30 UTC",
+    "pub_date": "Wed, 12 Aug 2026 08:30:02 GMT",
+    "title": "Model Update: 2026-08-12",
+    "tag": "models-2026-08-12-083002",
+    "items": [
+      "**New model added**: MAI-Code-1.1-Flash, Pricing: $0.2 in / $1.2 out per 1M tokens"
+    ]
   }
 ]

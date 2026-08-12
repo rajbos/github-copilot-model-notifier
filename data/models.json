@@ -415,6 +415,20 @@
       "outputCostPerMillion": 4.5
     }
   },
+  "MAI-Code-1.1-Flash": {
+    "name": "MAI-Code-1.1-Flash",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.2,
+      "cachedInputCostPerMillion": 0.02,
+      "outputCostPerMillion": 1.2
+    }
+  },
   "Qwen2.5": {
     "name": "Qwen2.5",
     "provider": "",
