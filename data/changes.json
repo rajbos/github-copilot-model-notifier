@@ -460,5 +460,15 @@
     "items": [
       "**New model added**: MAI-Code-1.1-Flash, Pricing: $0.2 in / $1.2 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-08-14 08:28 UTC",
+    "pub_date": "Fri, 14 Aug 2026 08:28:40 GMT",
+    "title": "Model Update: 2026-08-14",
+    "tag": "models-2026-08-14-082840",
+    "items": [
+      "**New model added**: Gemini 3.7 Flash (Provider: Google), Pricing: $0.75 in / $3.75 out per 1M tokens",
+      "**Gemini 3.6 Flash**: Pricing changed from '$1.5 in / $7.5 out per 1M tokens' to '$0.75 in / $3.75 out per 1M tokens'"
+    ]
   }
 ]

@@ -375,9 +375,23 @@
     "pricing": {
       "releaseStatus": "GA",
       "category": "Versatile",
-      "inputCostPerMillion": 1.5,
-      "cachedInputCostPerMillion": 0.15,
-      "outputCostPerMillion": 7.5
+      "inputCostPerMillion": 0.75,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 3.75
+    }
+  },
+  "Gemini 3.7 Flash": {
+    "name": "Gemini 3.7 Flash",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 0.75,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 3.75
     }
   },
   "Grok 4.5": {
