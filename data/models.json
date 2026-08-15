@@ -415,6 +415,34 @@
       }
     }
   },
+  "Grok 4.6": {
+    "name": "Grok 4.6",
+    "provider": "xAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.5,
+      "outputCostPerMillion": 6.0,
+      "threshold": "\u2264 200K",
+      "longContext": {
+        "inputCostPerMillion": 4.0,
+        "cachedInputCostPerMillion": 1.0,
+        "outputCostPerMillion": 12.0,
+        "threshold": "> 200K"
+      }
+    }
+  },
+  "these models": {
+    "name": "these models",
+    "provider": "xAI",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "MAI-Code-1-Flash": {
     "name": "MAI-Code-1-Flash",
     "provider": "",

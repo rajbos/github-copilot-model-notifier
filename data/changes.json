@@ -470,5 +470,15 @@
       "**New model added**: Gemini 3.7 Flash (Provider: Google), Pricing: $0.75 in / $3.75 out per 1M tokens",
       "**Gemini 3.6 Flash**: Pricing changed from '$1.5 in / $7.5 out per 1M tokens' to '$0.75 in / $3.75 out per 1M tokens'"
     ]
+  },
+  {
+    "date": "2026-08-15 08:05 UTC",
+    "pub_date": "Sat, 15 Aug 2026 08:05:56 GMT",
+    "title": "Model Update: 2026-08-15",
+    "tag": "models-2026-08-15-080556",
+    "items": [
+      "**New model added**: Grok 4.6 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens",
+      "**New model added**: these models (Provider: xAI)"
+    ]
   }
 ]
