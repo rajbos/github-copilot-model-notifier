@@ -610,13 +610,16 @@ def generate_html(models: dict, changes_history: list) -> str:
 
     model_rows = []
     for name, info in sorted(models.items()):
+        pricing = info.get("pricing") or {}
+        in_price = _format_price(pricing.get("inputCostPerMillion"))
+        out_price = _format_price(pricing.get("outputCostPerMillion"))
         model_rows.append(
             f"      <tr>\n"
             f"        <td>{name}</td>\n"
             f"        <td>{info.get('provider', '')}</td>\n"
             f"        <td>{info.get('release_status', '')}</td>\n"
-            f"        <td>{info.get('multiplier_paid', '')}</td>\n"
-            f"        <td>{info.get('multiplier_free', '')}</td>\n"
+            f"        <td>{in_price}</td>\n"
+            f"        <td>{out_price}</td>\n"
             f"      </tr>"
         )
 
@@ -705,8 +708,8 @@ def generate_html(models: dict, changes_history: list) -> str:
         <th>Model Name</th>
         <th>Provider</th>
         <th>Release Status</th>
-        <th>Multiplier (Paid Plans)</th>
-        <th>Multiplier (Copilot Free)</th>
+        <th>Input Price (per 1M tokens)</th>
+        <th>Output Price (per 1M tokens)</th>
       </tr>
     </thead>
     <tbody>
@@ -827,13 +830,14 @@ def main() -> None:
         for change in changes:
             release_notes += f"- {change}\n"
         release_notes += "\n### Current Models\n\n"
-        release_notes += "| Model | Provider | Multiplier (Paid) | Pricing (per 1M tokens) |\n"
-        release_notes += "| ----- | -------- | ----------------- | ------------------------ |\n"
+        release_notes += "| Model | Provider | Input Price (per 1M) | Output Price (per 1M) |\n"
+        release_notes += "| ----- | -------- | --------------------- | ----------------------- |\n"
         for name, info in sorted(new_models.items()):
-            pricing_summary = _format_pricing_summary(info.get("pricing"))
+            pricing = info.get("pricing") or {}
+            in_price = _format_price(pricing.get("inputCostPerMillion"))
+            out_price = _format_price(pricing.get("outputCostPerMillion"))
             release_notes += (
-                f"| {name} | {info.get('provider', '')} | {info.get('multiplier_paid', '')} "
-                f"| {pricing_summary} |\n"
+                f"| {name} | {info.get('provider', '')} | {in_price} | {out_price} |\n"
             )
 
         # Write release notes to a temp file for the workflow to consume
