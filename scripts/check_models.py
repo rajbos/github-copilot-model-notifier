@@ -661,7 +661,7 @@ def generate_html(models: dict, changes_history: list) -> str:
             f"    <tbody>\n"
             + "\n".join(rows)
             + "\n    </tbody>\n"
-            f"  </table>"
+            "  </table>"
         )
 
     change_items = []
