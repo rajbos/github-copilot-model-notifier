@@ -436,13 +436,6 @@
       }
     }
   },
-  "these models": {
-    "name": "these models",
-    "provider": "xAI",
-    "release_status": "",
-    "multiplier_paid": "",
-    "multiplier_free": ""
-  },
   "MAI-Code-1-Flash": {
     "name": "MAI-Code-1-Flash",
     "provider": "",

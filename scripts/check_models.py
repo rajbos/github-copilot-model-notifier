@@ -15,8 +15,29 @@ import urllib.request
 from datetime import datetime, timezone
 from email.utils import formatdate
 
-# Number of columns in the model table (used for the empty-state row)
-_MODEL_TABLE_COLS = 5
+# Number of columns in the per-provider model table (used for the empty-state row)
+_MODEL_TABLE_COLS = 4
+
+# Preferred provider display order; any other/blank provider is grouped last under "Other".
+_PROVIDER_ORDER = ["OpenAI", "Microsoft", "Anthropic", "Google", "xAI"]
+
+
+def _provider_sort_key(provider: str) -> tuple:
+    if provider in _PROVIDER_ORDER:
+        return (0, _PROVIDER_ORDER.index(provider))
+    return (1, provider or "Other")
+
+
+def _group_models_by_provider(models: dict) -> list:
+    """Return [(provider_label, [(name, info), ...]), ...] sorted per _PROVIDER_ORDER."""
+    groups: dict = {}
+    for name, info in sorted(models.items()):
+        provider = info.get("provider") or "Other"
+        groups.setdefault(provider, []).append((name, info))
+    return [
+        (provider, groups[provider])
+        for provider in sorted(groups, key=_provider_sort_key)
+    ]
 
 DOCS_URL = "https://docs.github.com/en/copilot/reference/ai-models/supported-models"
 _HOSTING_API_URL = (
@@ -171,12 +192,15 @@ def _parse_hosting_page(md: str) -> dict:
     # The pattern matches a model name that starts and ends with an alphanumeric
     # character and may contain letters, digits, spaces, dots, and hyphens in
     # the middle (e.g. "Grok Code Fast 1").
+    # Excludes generic summary sentences (e.g. "xAI operates these models in
+    # GitHub Copilot") that match the pattern but don't name a real model.
+    _NON_MODEL_PHRASES = {"these models", "this model", "the following models"}
     for m in re.finditer(
         r"xAI operates ([A-Za-z0-9][A-Za-z0-9 .\-]*[A-Za-z0-9]) in GitHub Copilot",
         md,
     ):
         name = m.group(1).strip()
-        if name and name not in models:
+        if name and name.lower() not in _NON_MODEL_PHRASES and name not in models:
             models[name] = {
                 "name": name,
                 "provider": "xAI",
@@ -608,19 +632,36 @@ def generate_html(models: dict, changes_history: list) -> str:
     """Return the full HTML for docs/index.html."""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
-    model_rows = []
-    for name, info in sorted(models.items()):
-        pricing = info.get("pricing") or {}
-        in_price = _format_price(pricing.get("inputCostPerMillion"))
-        out_price = _format_price(pricing.get("outputCostPerMillion"))
-        model_rows.append(
+    provider_tables = []
+    for provider, provider_models in _group_models_by_provider(models):
+        rows = []
+        for name, info in provider_models:
+            pricing = info.get("pricing") or {}
+            in_price = _format_price(pricing.get("inputCostPerMillion"))
+            out_price = _format_price(pricing.get("outputCostPerMillion"))
+            rows.append(
+                f"      <tr>\n"
+                f"        <td>{name}</td>\n"
+                f"        <td>{info.get('release_status', '')}</td>\n"
+                f"        <td>{in_price}</td>\n"
+                f"        <td>{out_price}</td>\n"
+                f"      </tr>"
+            )
+        provider_tables.append(
+            f"  <h3>{provider}</h3>\n"
+            f"  <table>\n"
+            f"    <thead>\n"
             f"      <tr>\n"
-            f"        <td>{name}</td>\n"
-            f"        <td>{info.get('provider', '')}</td>\n"
-            f"        <td>{info.get('release_status', '')}</td>\n"
-            f"        <td>{in_price}</td>\n"
-            f"        <td>{out_price}</td>\n"
-            f"      </tr>"
+            f"        <th>Model Name</th>\n"
+            f"        <th>Release Status</th>\n"
+            f"        <th>Input Price (per 1M tokens)</th>\n"
+            f"        <th>Output Price (per 1M tokens)</th>\n"
+            f"      </tr>\n"
+            f"    </thead>\n"
+            f"    <tbody>\n"
+            + "\n".join(rows)
+            + "\n    </tbody>\n"
+            "  </table>"
         )
 
     change_items = []
@@ -636,10 +677,10 @@ def generate_html(models: dict, changes_history: list) -> str:
             f"  </div>"
         )
 
-    model_rows_html = (
-        "\n".join(model_rows)
-        if model_rows
-        else f'      <tr><td colspan="{_MODEL_TABLE_COLS}">No models found yet. The first workflow run will populate this page.</td></tr>'
+    provider_tables_html = (
+        "\n\n".join(provider_tables)
+        if provider_tables
+        else "  <p>No models found yet. The first workflow run will populate this page.</p>"
     )
     change_items_html = (
         "\n".join(change_items) if change_items else "  <p>No changes recorded yet.</p>"
@@ -655,6 +696,7 @@ def generate_html(models: dict, changes_history: list) -> str:
     body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; color: #24292f; }}
     h1 {{ border-bottom: 1px solid #d0d7de; padding-bottom: 10px; }}
     h2 {{ margin-top: 30px; color: #24292f; }}
+    h3 {{ margin-top: 20px; color: #24292f; }}
     table {{ width: 100%; border-collapse: collapse; margin: 16px 0; }}
     th, td {{ padding: 8px 12px; text-align: left; border: 1px solid #d0d7de; }}
     th {{ background-color: #f6f8fa; font-weight: 600; }}
@@ -670,6 +712,7 @@ def generate_html(models: dict, changes_history: list) -> str:
       body {{ background-color: #0d1117; color: #e6edf3; }}
       h1 {{ border-bottom-color: #30363d; }}
       h2 {{ color: #e6edf3; }}
+      h3 {{ color: #e6edf3; }}
       a {{ color: #58a6ff; }}
       th, td {{ border-color: #30363d; }}
       th {{ background-color: #161b22; }}
@@ -702,20 +745,7 @@ def generate_html(models: dict, changes_history: list) -> str:
   <p class="updated">Last updated: {now} &nbsp;|&nbsp; Source: <a href="{DOCS_URL}">GitHub Docs</a></p>
 
   <h2>Current Models ({len(models)})</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Model Name</th>
-        <th>Provider</th>
-        <th>Release Status</th>
-        <th>Input Price (per 1M tokens)</th>
-        <th>Output Price (per 1M tokens)</th>
-      </tr>
-    </thead>
-    <tbody>
-{model_rows_html}
-    </tbody>
-  </table>
+{provider_tables_html}
 
   <h2>Recent Changes</h2>
 {change_items_html}
@@ -830,15 +860,16 @@ def main() -> None:
         for change in changes:
             release_notes += f"- {change}\n"
         release_notes += "\n### Current Models\n\n"
-        release_notes += "| Model | Provider | Input Price (per 1M) | Output Price (per 1M) |\n"
-        release_notes += "| ----- | -------- | --------------------- | ----------------------- |\n"
-        for name, info in sorted(new_models.items()):
-            pricing = info.get("pricing") or {}
-            in_price = _format_price(pricing.get("inputCostPerMillion"))
-            out_price = _format_price(pricing.get("outputCostPerMillion"))
-            release_notes += (
-                f"| {name} | {info.get('provider', '')} | {in_price} | {out_price} |\n"
-            )
+        for provider, provider_models in _group_models_by_provider(new_models):
+            release_notes += f"#### {provider}\n\n"
+            release_notes += "| Model | Input Price (per 1M) | Output Price (per 1M) |\n"
+            release_notes += "| ----- | --------------------- | ----------------------- |\n"
+            for name, info in provider_models:
+                pricing = info.get("pricing") or {}
+                in_price = _format_price(pricing.get("inputCostPerMillion"))
+                out_price = _format_price(pricing.get("outputCostPerMillion"))
+                release_notes += f"| {name} | {in_price} | {out_price} |\n"
+            release_notes += "\n"
 
         # Write release notes to a temp file for the workflow to consume
         release_notes_path = os.path.join(tempfile.gettempdir(), "release_notes.md")

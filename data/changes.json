@@ -477,8 +477,7 @@
     "title": "Model Update: 2026-08-15",
     "tag": "models-2026-08-15-080556",
     "items": [
-      "**New model added**: Grok 4.6 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens",
-      "**New model added**: these models (Provider: xAI)"
+      "**New model added**: Grok 4.6 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens"
     ]
   }
 ]
