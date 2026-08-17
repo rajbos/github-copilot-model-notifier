@@ -6,6 +6,7 @@ model-comparison pages), compares with stored data, and generates GitHub Pages
 content (HTML + RSS feed) when changes are detected.
 """
 
+import html
 import json
 import os
 import re
@@ -604,6 +605,20 @@ def compare_models(old: dict, new: dict) -> list:
 # Page generation
 # ---------------------------------------------------------------------------
 
+def _markdown_bold_to_html(text: str) -> str:
+    """HTML-escape *text* and convert ``**bold**`` markdown to ``<strong>``.
+
+    The change strings stored in data/changes.json use lightweight
+    markdown-style bold syntax (see ``compare_models``) so that they render
+    correctly as-is in GitHub release notes. HTML output (docs/index.html)
+    needs those converted to real markup instead of showing literal
+    asterisks, so escape first (model names are scraped from external pages
+    and could in theory contain HTML-special characters) and then convert.
+    """
+    escaped = html.escape(text)
+    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+
+
 def generate_html(models: dict, changes_history: list) -> str:
     """Return the full HTML for docs/index.html."""
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -625,7 +640,9 @@ def generate_html(models: dict, changes_history: list) -> str:
 
     change_items = []
     for change in reversed(changes_history[-20:]):
-        items_html = "".join(f"<li>{c}</li>" for c in change.get("items", []))
+        items_html = "".join(
+            f"<li>{_markdown_bold_to_html(c)}</li>" for c in change.get("items", [])
+        )
         tag = change.get("tag", "")
         release_link = f"{REPO_URL}/releases/tag/{tag}" if tag else REPO_URL
         change_items.append(
