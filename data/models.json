@@ -129,16 +129,16 @@
     "pricing": {
       "releaseStatus": "GA",
       "category": "Powerful",
-      "inputCostPerMillion": 5.0,
-      "cachedInputCostPerMillion": 0.5,
-      "outputCostPerMillion": 30.0,
-      "cacheCreationCostPerMillion": 6.25,
+      "inputCostPerMillion": 2.5,
+      "cachedInputCostPerMillion": 0.25,
+      "outputCostPerMillion": 15.0,
+      "cacheCreationCostPerMillion": 3.125,
       "threshold": "\u2264 272K",
       "longContext": {
-        "inputCostPerMillion": 10.0,
-        "cachedInputCostPerMillion": 1.0,
-        "outputCostPerMillion": 45.0,
-        "cacheCreationCostPerMillion": 12.5,
+        "inputCostPerMillion": 5.0,
+        "cachedInputCostPerMillion": 0.5,
+        "outputCostPerMillion": 22.5,
+        "cacheCreationCostPerMillion": 6.25,
         "threshold": "> 272K"
       }
     }
