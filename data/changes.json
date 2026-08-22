@@ -488,5 +488,14 @@
     "items": [
       "**GPT-5.6 Sol**: Pricing changed from '$5 in / $30 out per 1M tokens' to '$2.5 in / $15 out per 1M tokens'"
     ]
+  },
+  {
+    "date": "2026-08-22 08:06 UTC",
+    "pub_date": "Sat, 22 Aug 2026 08:06:47 GMT",
+    "title": "Model Update: 2026-08-22",
+    "tag": "models-2026-08-22-080647",
+    "items": [
+      "**GPT-5.6 Sol**: Pricing changed from '$2.5 in / $15 out per 1M tokens' to '$2 in / $10 out per 1M tokens'"
+    ]
   }
 ]
