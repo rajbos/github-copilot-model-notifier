@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 22 Aug 2026 08:06:47 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 08:13:30 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-09-02</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-09-02-081330</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Claude Fable 5.1 (Provider: Anthropic), Pricing: $10 in / $50 out per 1M tokens&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 02 Sep 2026 08:13:30 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-09-02-081330</guid>
+    </item>
     <item>
       <title>Model Update: 2026-08-22</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-08-22-080647</link>

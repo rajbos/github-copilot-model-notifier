@@ -331,6 +331,21 @@
       "cacheCreationCostPerMillion": 12.5
     }
   },
+  "Claude Fable 5.1": {
+    "name": "Claude Fable 5.1",
+    "provider": "Anthropic",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 10.0,
+      "cachedInputCostPerMillion": 0.25,
+      "outputCostPerMillion": 50.0,
+      "cacheCreationCostPerMillion": 12.5
+    }
+  },
   "Gemini 3.1 Pro": {
     "name": "Gemini 3.1 Pro",
     "provider": "Google",

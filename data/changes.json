@@ -497,5 +497,14 @@
     "items": [
       "**GPT-5.6 Sol**: Pricing changed from '$2.5 in / $15 out per 1M tokens' to '$2 in / $10 out per 1M tokens'"
     ]
+  },
+  {
+    "date": "2026-09-02 08:13 UTC",
+    "pub_date": "Wed, 02 Sep 2026 08:13:30 GMT",
+    "title": "Model Update: 2026-09-02",
+    "tag": "models-2026-09-02-081330",
+    "items": [
+      "**New model added**: Claude Fable 5.1 (Provider: Anthropic), Pricing: $10 in / $50 out per 1M tokens"
+    ]
   }
 ]
