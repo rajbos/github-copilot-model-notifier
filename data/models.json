@@ -129,16 +129,16 @@
     "pricing": {
       "releaseStatus": "GA",
       "category": "Powerful",
-      "inputCostPerMillion": 2.0,
-      "cachedInputCostPerMillion": 0.2,
-      "outputCostPerMillion": 10.0,
-      "cacheCreationCostPerMillion": 2.5,
+      "inputCostPerMillion": 4.0,
+      "cachedInputCostPerMillion": 0.4,
+      "outputCostPerMillion": 20.0,
+      "cacheCreationCostPerMillion": 5.0,
       "threshold": "\u2264 272K",
       "longContext": {
-        "inputCostPerMillion": 4.0,
-        "cachedInputCostPerMillion": 0.4,
-        "outputCostPerMillion": 15.0,
-        "cacheCreationCostPerMillion": 5.0,
+        "inputCostPerMillion": 8.0,
+        "cachedInputCostPerMillion": 0.8,
+        "outputCostPerMillion": 30.0,
+        "cacheCreationCostPerMillion": 10.0,
         "threshold": "> 272K"
       }
     }
@@ -397,6 +397,20 @@
   },
   "Gemini 3.7 Flash": {
     "name": "Gemini 3.7 Flash",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 0.75,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 3.75
+    }
+  },
+  "Gemini 3.8 Flash": {
+    "name": "Gemini 3.8 Flash",
     "provider": "Google",
     "release_status": "GA",
     "multiplier_paid": "",
