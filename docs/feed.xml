@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 04 Sep 2026 08:13:12 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 08:11:11 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-09-05</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-09-05-081111</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: GPT-6 Astra (Provider: OpenAI), Pricing: $10 in / $50 out per 1M tokens&lt;/li&gt;&lt;li&gt;**Model removed**: Claude Opus 4.5&lt;/li&gt;&lt;li&gt;**Model removed**: Claude Opus 4.6&lt;/li&gt;&lt;li&gt;**Model removed**: Claude Sonnet 4.5&lt;/li&gt;&lt;li&gt;**Model removed**: Gemini 3.1 Pro&lt;/li&gt;&lt;li&gt;**Model removed**: Raptor mini&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Sat, 05 Sep 2026 08:11:11 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-09-05-081111</guid>
+    </item>
     <item>
       <title>Model Update: 2026-09-04</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-09-04-081312</link>

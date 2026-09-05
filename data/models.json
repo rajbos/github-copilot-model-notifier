@@ -166,6 +166,29 @@
       }
     }
   },
+  "GPT-6 Astra": {
+    "name": "GPT-6 Astra",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 10.0,
+      "cachedInputCostPerMillion": 1.0,
+      "outputCostPerMillion": 50.0,
+      "cacheCreationCostPerMillion": 12.5,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 20.0,
+        "cachedInputCostPerMillion": 2.0,
+        "outputCostPerMillion": 75.0,
+        "cacheCreationCostPerMillion": 25.0,
+        "threshold": "> 272K"
+      }
+    }
+  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
@@ -179,21 +202,6 @@
       "cachedInputCostPerMillion": 0.1,
       "outputCostPerMillion": 5.0,
       "cacheCreationCostPerMillion": 1.25
-    }
-  },
-  "Claude Sonnet 4.5": {
-    "name": "Claude Sonnet 4.5",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 3.0,
-      "cachedInputCostPerMillion": 0.3,
-      "outputCostPerMillion": 15.0,
-      "cacheCreationCostPerMillion": 3.75
     }
   },
   "Claude Sonnet 4.6": {
@@ -224,36 +232,6 @@
       "cachedInputCostPerMillion": 0.2,
       "outputCostPerMillion": 10.0,
       "cacheCreationCostPerMillion": 2.5
-    }
-  },
-  "Claude Opus 4.5": {
-    "name": "Claude Opus 4.5",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Powerful",
-      "inputCostPerMillion": 5.0,
-      "cachedInputCostPerMillion": 0.5,
-      "outputCostPerMillion": 25.0,
-      "cacheCreationCostPerMillion": 6.25
-    }
-  },
-  "Claude Opus 4.6": {
-    "name": "Claude Opus 4.6",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Powerful",
-      "inputCostPerMillion": 5.0,
-      "cachedInputCostPerMillion": 0.5,
-      "outputCostPerMillion": 25.0,
-      "cacheCreationCostPerMillion": 6.25
     }
   },
   "Claude Opus 4.7": {
@@ -344,27 +322,6 @@
       "cachedInputCostPerMillion": 0.25,
       "outputCostPerMillion": 50.0,
       "cacheCreationCostPerMillion": 12.5
-    }
-  },
-  "Gemini 3.1 Pro": {
-    "name": "Gemini 3.1 Pro",
-    "provider": "Google",
-    "release_status": "Public preview",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "Public preview",
-      "category": "Powerful",
-      "inputCostPerMillion": 2.0,
-      "cachedInputCostPerMillion": 0.2,
-      "outputCostPerMillion": 12.0,
-      "threshold": "\u2264 200K",
-      "longContext": {
-        "inputCostPerMillion": 4.0,
-        "cachedInputCostPerMillion": 0.4,
-        "outputCostPerMillion": 18.0,
-        "threshold": "> 200K"
-      }
     }
   },
   "Gemini 3.5 Flash": {
@@ -499,20 +456,6 @@
     "release_status": "",
     "multiplier_paid": "",
     "multiplier_free": ""
-  },
-  "Raptor mini": {
-    "name": "Raptor mini",
-    "provider": "",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 0.25,
-      "cachedInputCostPerMillion": 0.025,
-      "outputCostPerMillion": 2.0
-    }
   },
   "Kimi K2.7 Code": {
     "name": "Kimi K2.7 Code",

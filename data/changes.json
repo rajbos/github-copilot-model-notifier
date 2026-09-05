@@ -516,5 +516,19 @@
       "**New model added**: Gemini 3.8 Flash (Provider: Google), Pricing: $0.75 in / $3.75 out per 1M tokens",
       "**GPT-5.6 Sol**: Pricing changed from '$2 in / $10 out per 1M tokens' to '$4 in / $20 out per 1M tokens'"
     ]
+  },
+  {
+    "date": "2026-09-05 08:11 UTC",
+    "pub_date": "Sat, 05 Sep 2026 08:11:11 GMT",
+    "title": "Model Update: 2026-09-05",
+    "tag": "models-2026-09-05-081111",
+    "items": [
+      "**New model added**: GPT-6 Astra (Provider: OpenAI), Pricing: $10 in / $50 out per 1M tokens",
+      "**Model removed**: Claude Opus 4.5",
+      "**Model removed**: Claude Opus 4.6",
+      "**Model removed**: Claude Sonnet 4.5",
+      "**Model removed**: Gemini 3.1 Pro",
+      "**Model removed**: Raptor mini"
+    ]
   }
 ]
