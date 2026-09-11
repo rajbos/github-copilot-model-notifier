@@ -530,5 +530,14 @@
       "**Model removed**: Gemini 3.1 Pro",
       "**Model removed**: Raptor mini"
     ]
+  },
+  {
+    "date": "2026-09-11 08:12 UTC",
+    "pub_date": "Fri, 11 Sep 2026 08:12:58 GMT",
+    "title": "Model Update: 2026-09-11",
+    "tag": "models-2026-09-11-081258",
+    "items": [
+      "**Model removed**: MAI-Code-1-Flash"
+    ]
   }
 ]

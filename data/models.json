@@ -422,20 +422,6 @@
       }
     }
   },
-  "MAI-Code-1-Flash": {
-    "name": "MAI-Code-1-Flash",
-    "provider": "",
-    "release_status": "",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Lightweight",
-      "inputCostPerMillion": 0.75,
-      "cachedInputCostPerMillion": 0.075,
-      "outputCostPerMillion": 4.5
-    }
-  },
   "MAI-Code-1.1-Flash": {
     "name": "MAI-Code-1.1-Flash",
     "provider": "",
