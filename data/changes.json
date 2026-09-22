@@ -539,5 +539,14 @@
     "items": [
       "**Model removed**: MAI-Code-1-Flash"
     ]
+  },
+  {
+    "date": "2026-09-22 08:13 UTC",
+    "pub_date": "Tue, 22 Sep 2026 08:13:27 GMT",
+    "title": "Model Update: 2026-09-22",
+    "tag": "models-2026-09-22-081327",
+    "items": [
+      "**New model added**: Grok 4.7 (Provider: xAI), Pricing: $2 in / $6 out per 1M tokens"
+    ]
   }
 ]
