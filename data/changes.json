@@ -559,5 +559,14 @@
       "**New model added**: GPT-6 Luna (Provider: OpenAI), Pricing: $0.1 in / $0.5 out per 1M tokens",
       "**New model added**: GPT-6 Sol (Provider: OpenAI), Pricing: $2 in / $10 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-09-29 08:14 UTC",
+    "pub_date": "Tue, 29 Sep 2026 08:14:29 GMT",
+    "title": "Model Update: 2026-09-29",
+    "tag": "models-2026-09-29-081429",
+    "items": [
+      "**New model added**: Claude Sonnet 5.5 (Provider: Anthropic), Pricing: $2 in / $10 out per 1M tokens"
+    ]
   }
 ]

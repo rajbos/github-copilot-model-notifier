@@ -280,6 +280,21 @@
       "cacheCreationCostPerMillion": 2.5
     }
   },
+  "Claude Sonnet 5.5": {
+    "name": "Claude Sonnet 5.5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.2,
+      "outputCostPerMillion": 10.0,
+      "cacheCreationCostPerMillion": 2.5
+    }
+  },
   "Claude Opus 4.7": {
     "name": "Claude Opus 4.7",
     "provider": "Anthropic",
