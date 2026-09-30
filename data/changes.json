@@ -568,5 +568,14 @@
     "items": [
       "**New model added**: Claude Sonnet 5.5 (Provider: Anthropic), Pricing: $2 in / $10 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-09-30 08:13 UTC",
+    "pub_date": "Wed, 30 Sep 2026 08:13:59 GMT",
+    "title": "Model Update: 2026-09-30",
+    "tag": "models-2026-09-30-081359",
+    "items": [
+      "**New model added**: GPT-6.1 Sol (Provider: OpenAI), Pricing: $2 in / $10 out per 1M tokens"
+    ]
   }
 ]

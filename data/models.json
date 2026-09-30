@@ -235,6 +235,29 @@
       }
     }
   },
+  "GPT-6.1 Sol": {
+    "name": "GPT-6.1 Sol",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 10.0,
+      "cacheCreationCostPerMillion": 2.5,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 4.0,
+        "cachedInputCostPerMillion": 0.2,
+        "outputCostPerMillion": 15.0,
+        "cacheCreationCostPerMillion": 5.0,
+        "threshold": "> 272K"
+      }
+    }
+  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
