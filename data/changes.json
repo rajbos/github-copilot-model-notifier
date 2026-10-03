@@ -577,5 +577,17 @@
     "items": [
       "**New model added**: GPT-6.1 Sol (Provider: OpenAI), Pricing: $2 in / $10 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-10-03 08:12 UTC",
+    "pub_date": "Sat, 03 Oct 2026 08:12:34 GMT",
+    "title": "Model Update: 2026-10-03",
+    "tag": "models-2026-10-03-081234",
+    "items": [
+      "**Model removed**: Claude Opus 4.7",
+      "**Model removed**: Gemini 3.5 Flash",
+      "**Model removed**: Gemini 3.6 Flash",
+      "**Model removed**: Kimi K2.7 Code"
+    ]
   }
 ]

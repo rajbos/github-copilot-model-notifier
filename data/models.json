@@ -318,21 +318,6 @@
       "cacheCreationCostPerMillion": 2.5
     }
   },
-  "Claude Opus 4.7": {
-    "name": "Claude Opus 4.7",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Powerful",
-      "inputCostPerMillion": 5.0,
-      "cachedInputCostPerMillion": 0.5,
-      "outputCostPerMillion": 25.0,
-      "cacheCreationCostPerMillion": 6.25
-    }
-  },
   "Claude Opus 4.8": {
     "name": "Claude Opus 4.8",
     "provider": "Anthropic",
@@ -421,34 +406,6 @@
       "cachedInputCostPerMillion": 0.25,
       "outputCostPerMillion": 50.0,
       "cacheCreationCostPerMillion": 12.5
-    }
-  },
-  "Gemini 3.5 Flash": {
-    "name": "Gemini 3.5 Flash",
-    "provider": "Google",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Lightweight",
-      "inputCostPerMillion": 1.5,
-      "cachedInputCostPerMillion": 0.15,
-      "outputCostPerMillion": 9.0
-    }
-  },
-  "Gemini 3.6 Flash": {
-    "name": "Gemini 3.6 Flash",
-    "provider": "Google",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 0.75,
-      "cachedInputCostPerMillion": 0.075,
-      "outputCostPerMillion": 3.75
     }
   },
   "Gemini 3.7 Flash": {
@@ -562,20 +519,6 @@
     "release_status": "",
     "multiplier_paid": "",
     "multiplier_free": ""
-  },
-  "Kimi K2.7 Code": {
-    "name": "Kimi K2.7 Code",
-    "provider": "",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 0.95,
-      "cachedInputCostPerMillion": 0.19,
-      "outputCostPerMillion": 4.0
-    }
   },
   "Kimi K3": {
     "name": "Kimi K3",
