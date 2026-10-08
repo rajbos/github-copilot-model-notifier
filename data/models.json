@@ -273,6 +273,29 @@
       "cacheCreationCostPerMillion": 1.25
     }
   },
+  "Claude Haiku 5.5": {
+    "name": "Claude Haiku 5.5",
+    "provider": "Anthropic",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.1,
+      "cachedInputCostPerMillion": 0.01,
+      "outputCostPerMillion": 0.5,
+      "cacheCreationCostPerMillion": 0.125,
+      "threshold": "\u2264 100K",
+      "longContext": {
+        "inputCostPerMillion": 0.5,
+        "cachedInputCostPerMillion": 0.05,
+        "outputCostPerMillion": 2.5,
+        "cacheCreationCostPerMillion": 0.625,
+        "threshold": "> 100K"
+      }
+    }
+  },
   "Claude Sonnet 4.6": {
     "name": "Claude Sonnet 4.6",
     "provider": "Anthropic",
@@ -313,7 +336,7 @@
       "releaseStatus": "GA",
       "category": "Versatile",
       "inputCostPerMillion": 2.0,
-      "cachedInputCostPerMillion": 0.2,
+      "cachedInputCostPerMillion": 0.1,
       "outputCostPerMillion": 10.0,
       "cacheCreationCostPerMillion": 2.5
     }

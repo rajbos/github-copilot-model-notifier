@@ -589,5 +589,15 @@
       "**Model removed**: Gemini 3.6 Flash",
       "**Model removed**: Kimi K2.7 Code"
     ]
+  },
+  {
+    "date": "2026-10-08 08:15 UTC",
+    "pub_date": "Thu, 08 Oct 2026 08:15:42 GMT",
+    "title": "Model Update: 2026-10-08",
+    "tag": "models-2026-10-08-081542",
+    "items": [
+      "**New model added**: Claude Haiku 5.5 (Provider: Anthropic), Pricing: $0.1 in / $0.5 out per 1M tokens",
+      "**Claude Sonnet 5.5**: Pricing updated"
+    ]
   }
 ]
