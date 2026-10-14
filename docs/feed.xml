@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 08 Oct 2026 08:15:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 08:13:03 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-10-14</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-14-081303</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Gemini 4 Argon (Provider: Google), Pricing: $2 in / $10 out per 1M tokens&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Wed, 14 Oct 2026 08:13:03 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-14-081303</guid>
+    </item>
     <item>
       <title>Model Update: 2026-10-08</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-08-081542</link>
@@ -349,13 +356,6 @@
       <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Gemini 3 Pro&lt;/li&gt;&lt;li&gt;**GPT-5.1**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex-Max**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex-Mini**: Release status changed from 'Public preview' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Fri, 27 Mar 2026 08:17:31 GMT</pubDate>
       <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-27-081731</guid>
-    </item>
-    <item>
-      <title>Model Update: 2026-03-18</title>
-      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-18-081622</link>
-      <description>&lt;ul&gt;&lt;li&gt;**New model added**: GPT-5.4 mini (Provider: OpenAI), Multiplier: 0.33&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Wed, 18 Mar 2026 08:16:22 GMT</pubDate>
-      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-18-081622</guid>
     </item>
   </channel>
 </rss>

@@ -459,6 +459,20 @@
       "outputCostPerMillion": 3.75
     }
   },
+  "Gemini 4 Argon": {
+    "name": "Gemini 4 Argon",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 10.0
+    }
+  },
   "Grok 4.5": {
     "name": "Grok 4.5",
     "provider": "xAI",

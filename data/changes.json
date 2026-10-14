@@ -599,5 +599,14 @@
       "**New model added**: Claude Haiku 5.5 (Provider: Anthropic), Pricing: $0.1 in / $0.5 out per 1M tokens",
       "**Claude Sonnet 5.5**: Pricing updated"
     ]
+  },
+  {
+    "date": "2026-10-14 08:13 UTC",
+    "pub_date": "Wed, 14 Oct 2026 08:13:03 GMT",
+    "title": "Model Update: 2026-10-14",
+    "tag": "models-2026-10-14-081303",
+    "items": [
+      "**New model added**: Gemini 4 Argon (Provider: Google), Pricing: $2 in / $10 out per 1M tokens"
+    ]
   }
 ]
