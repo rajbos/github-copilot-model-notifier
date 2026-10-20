@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 14 Oct 2026 08:13:03 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 08:12:32 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-10-20</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-20-081232</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: GPT-5 mini&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.4&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.4 mini&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.5&lt;/li&gt;&lt;li&gt;**Model removed**: Gemini 3.7 Flash&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 20 Oct 2026 08:12:32 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-20-081232</guid>
+    </item>
     <item>
       <title>Model Update: 2026-10-14</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-14-081303</link>
@@ -349,13 +356,6 @@
       <description>&lt;ul&gt;&lt;li&gt;**Model removed**: GPT-5.1-Codex&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.1-Codex-Max&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.1-Codex-Mini&lt;/li&gt;&lt;li&gt;**GPT-5.1**: Release status changed from 'Closing down: 2026-04-01' to 'Closing down: 2026-04-15'&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Thu, 02 Apr 2026 08:23:30 GMT</pubDate>
       <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-02-082330</guid>
-    </item>
-    <item>
-      <title>Model Update: 2026-03-27</title>
-      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-27-081731</link>
-      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Gemini 3 Pro&lt;/li&gt;&lt;li&gt;**GPT-5.1**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex-Max**: Release status changed from 'GA' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;li&gt;**GPT-5.1-Codex-Mini**: Release status changed from 'Public preview' to 'Closing down: 2026-04-01'&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Fri, 27 Mar 2026 08:17:31 GMT</pubDate>
-      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-03-27-081731</guid>
     </item>
   </channel>
 </rss>

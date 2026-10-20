@@ -608,5 +608,18 @@
     "items": [
       "**New model added**: Gemini 4 Argon (Provider: Google), Pricing: $2 in / $10 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-10-20 08:12 UTC",
+    "pub_date": "Tue, 20 Oct 2026 08:12:32 GMT",
+    "title": "Model Update: 2026-10-20",
+    "tag": "models-2026-10-20-081232",
+    "items": [
+      "**Model removed**: GPT-5 mini",
+      "**Model removed**: GPT-5.4",
+      "**Model removed**: GPT-5.4 mini",
+      "**Model removed**: GPT-5.5",
+      "**Model removed**: Gemini 3.7 Flash"
+    ]
   }
 ]
