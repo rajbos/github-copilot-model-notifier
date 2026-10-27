@@ -621,5 +621,14 @@
       "**Model removed**: GPT-5.5",
       "**Model removed**: Gemini 3.7 Flash"
     ]
+  },
+  {
+    "date": "2026-10-27 08:13 UTC",
+    "pub_date": "Tue, 27 Oct 2026 08:13:05 GMT",
+    "title": "Model Update: 2026-10-27",
+    "tag": "models-2026-10-27-081305",
+    "items": [
+      "**New model added**: GPT-6.1 Terra (Provider: OpenAI), Pricing: $1 in / $5 out per 1M tokens"
+    ]
   }
 ]
