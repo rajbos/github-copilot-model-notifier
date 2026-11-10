@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 27 Oct 2026 08:13:05 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 08:08:05 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-11-10</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-10-080805</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Claude Fable 5.2 (Provider: Anthropic), Pricing: $8 in / $40 out per 1M tokens&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 10 Nov 2026 08:08:05 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-10-080805</guid>
+    </item>
     <item>
       <title>Model Update: 2026-10-27</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-10-27-081305</link>
@@ -349,13 +356,6 @@
       <description>&lt;ul&gt;&lt;li&gt;**New model added**: Claude Opus 4.7 (Provider: Anthropic), Multiplier: 7.5&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Fri, 17 Apr 2026 08:36:07 GMT</pubDate>
       <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-17-083607</guid>
-    </item>
-    <item>
-      <title>Model Update: 2026-04-16</title>
-      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-16-083608</link>
-      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: GPT-5.1&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Thu, 16 Apr 2026 08:36:08 GMT</pubDate>
-      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-16-083608</guid>
     </item>
   </channel>
 </rss>

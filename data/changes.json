@@ -630,5 +630,14 @@
     "items": [
       "**New model added**: GPT-6.1 Terra (Provider: OpenAI), Pricing: $1 in / $5 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-11-10 08:08 UTC",
+    "pub_date": "Tue, 10 Nov 2026 08:08:05 GMT",
+    "title": "Model Update: 2026-11-10",
+    "tag": "models-2026-11-10-080805",
+    "items": [
+      "**New model added**: Claude Fable 5.2 (Provider: Anthropic), Pricing: $8 in / $40 out per 1M tokens"
+    ]
   }
 ]
