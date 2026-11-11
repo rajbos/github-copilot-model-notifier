@@ -427,6 +427,20 @@
       "outputCostPerMillion": 10.0
     }
   },
+  "Gemini 4 Carbon": {
+    "name": "Gemini 4 Carbon",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 10.0
+    }
+  },
   "Grok 4.5": {
     "name": "Grok 4.5",
     "provider": "xAI",
