@@ -648,5 +648,14 @@
     "items": [
       "**New model added**: Gemini 4 Carbon (Provider: Google), Pricing: $2 in / $10 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-11-14 08:06 UTC",
+    "pub_date": "Sat, 14 Nov 2026 08:06:41 GMT",
+    "title": "Model Update: 2026-11-14",
+    "tag": "models-2026-11-14-080641",
+    "items": [
+      "**New model added**: Gemini 4 Hydrogen (Provider: Google), Pricing: $1.5 in / $7.5 out per 1M tokens"
+    ]
   }
 ]

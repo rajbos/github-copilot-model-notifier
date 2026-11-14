@@ -441,6 +441,20 @@
       "outputCostPerMillion": 10.0
     }
   },
+  "Gemini 4 Hydrogen": {
+    "name": "Gemini 4 Hydrogen",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 1.5,
+      "cachedInputCostPerMillion": 0.075,
+      "outputCostPerMillion": 7.5
+    }
+  },
   "Grok 4.5": {
     "name": "Grok 4.5",
     "provider": "xAI",
