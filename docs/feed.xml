@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 14 Nov 2026 08:06:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 08:07:54 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-11-17</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-17-080754</link>
+      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Claude Opus 5&lt;/li&gt;&lt;li&gt;**Model removed**: GPT-5.6 Terra&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Tue, 17 Nov 2026 08:07:54 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-17-080754</guid>
+    </item>
     <item>
       <title>Model Update: 2026-11-14</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-14-080641</link>
@@ -349,13 +356,6 @@
       <description>&lt;ul&gt;&lt;li&gt;**Claude Opus 4.7**: Multiplier (paid) changed from '7.5' to '15'&lt;/li&gt;&lt;li&gt;**GPT-5.4 nano**: Release status changed from 'GA' to ''&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Fri, 01 May 2026 08:41:47 GMT</pubDate>
       <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-01-084147</guid>
-    </item>
-    <item>
-      <title>Model Update: 2026-04-25</title>
-      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-25-082151</link>
-      <description>&lt;ul&gt;&lt;li&gt;**New model added**: GPT-5.5 (Provider: OpenAI), Multiplier: 7.5&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Sat, 25 Apr 2026 08:21:51 GMT</pubDate>
-      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-04-25-082151</guid>
     </item>
   </channel>
 </rss>

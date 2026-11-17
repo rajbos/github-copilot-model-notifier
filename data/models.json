@@ -73,29 +73,6 @@
       }
     }
   },
-  "GPT-5.6 Terra": {
-    "name": "GPT-5.6 Terra",
-    "provider": "OpenAI",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Versatile",
-      "inputCostPerMillion": 2.0,
-      "cachedInputCostPerMillion": 0.2,
-      "outputCostPerMillion": 12.0,
-      "cacheCreationCostPerMillion": 2.5,
-      "threshold": "\u2264 272K",
-      "longContext": {
-        "inputCostPerMillion": 4.0,
-        "cachedInputCostPerMillion": 0.4,
-        "outputCostPerMillion": 18.0,
-        "cacheCreationCostPerMillion": 5.0,
-        "threshold": "> 272K"
-      }
-    }
-  },
   "GPT-6 Astra": {
     "name": "GPT-6 Astra",
     "provider": "OpenAI",
@@ -322,21 +299,6 @@
       "cachedInputCostPerMillion": 1.0,
       "outputCostPerMillion": 50.0,
       "cacheCreationCostPerMillion": 12.5
-    }
-  },
-  "Claude Opus 5": {
-    "name": "Claude Opus 5",
-    "provider": "Anthropic",
-    "release_status": "GA",
-    "multiplier_paid": "",
-    "multiplier_free": "",
-    "pricing": {
-      "releaseStatus": "GA",
-      "category": "Powerful",
-      "inputCostPerMillion": 5.0,
-      "cachedInputCostPerMillion": 0.5,
-      "outputCostPerMillion": 25.0,
-      "cacheCreationCostPerMillion": 6.25
     }
   },
   "Claude Opus 5.5": {
