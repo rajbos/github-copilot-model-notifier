@@ -188,6 +188,52 @@
       }
     }
   },
+  "GPT-6.2 Astra": {
+    "name": "GPT-6.2 Astra",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 8.0,
+      "cachedInputCostPerMillion": 0.4,
+      "outputCostPerMillion": 40.0,
+      "cacheCreationCostPerMillion": 10.0,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 16.0,
+        "cachedInputCostPerMillion": 0.8,
+        "outputCostPerMillion": 60.0,
+        "cacheCreationCostPerMillion": 20.0,
+        "threshold": "> 272K"
+      }
+    }
+  },
+  "GPT-6.2 Sol": {
+    "name": "GPT-6.2 Sol",
+    "provider": "OpenAI",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 2.0,
+      "cachedInputCostPerMillion": 0.1,
+      "outputCostPerMillion": 10.0,
+      "cacheCreationCostPerMillion": 2.5,
+      "threshold": "\u2264 272K",
+      "longContext": {
+        "inputCostPerMillion": 4.0,
+        "cachedInputCostPerMillion": 0.2,
+        "outputCostPerMillion": 15.0,
+        "cacheCreationCostPerMillion": 5.0,
+        "threshold": "> 272K"
+      }
+    }
+  },
   "Claude Haiku 4.5": {
     "name": "Claude Haiku 4.5",
     "provider": "Anthropic",
@@ -492,6 +538,34 @@
       "inputCostPerMillion": 0.2,
       "cachedInputCostPerMillion": 0.02,
       "outputCostPerMillion": 1.2
+    }
+  },
+  "MAI Code 2": {
+    "name": "MAI Code 2",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Powerful",
+      "inputCostPerMillion": 0.5,
+      "cachedInputCostPerMillion": 0.025,
+      "outputCostPerMillion": 2.5
+    }
+  },
+  "MAI Code 2 Flash": {
+    "name": "MAI Code 2 Flash",
+    "provider": "",
+    "release_status": "",
+    "multiplier_paid": "",
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Lightweight",
+      "inputCostPerMillion": 0.05,
+      "cachedInputCostPerMillion": 0.005,
+      "outputCostPerMillion": 0.25
     }
   },
   "Qwen2.5": {
