@@ -463,6 +463,13 @@
       "outputCostPerMillion": 7.5
     }
   },
+  "Gemini 4 Neon": {
+    "name": "Gemini 4 Neon",
+    "provider": "Google",
+    "release_status": "GA",
+    "multiplier_paid": "",
+    "multiplier_free": ""
+  },
   "Grok 4.5": {
     "name": "Grok 4.5",
     "provider": "xAI",

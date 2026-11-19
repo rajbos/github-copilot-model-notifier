@@ -6,7 +6,14 @@
     <description>Notifications about changes to GitHub Copilot models including new models, removed models, and multiplier changes.</description>
     <language>en-us</language>
     <atom:link href="https://rajbos.github.io/github-copilot-model-notifier/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 18 Nov 2026 08:07:57 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 08:07:55 GMT</lastBuildDate>
+    <item>
+      <title>Model Update: 2026-11-19</title>
+      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-19-080755</link>
+      <description>&lt;ul&gt;&lt;li&gt;**New model added**: Gemini 4 Neon (Provider: Google)&lt;/li&gt;&lt;/ul&gt;</description>
+      <pubDate>Thu, 19 Nov 2026 08:07:55 GMT</pubDate>
+      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-19-080755</guid>
+    </item>
     <item>
       <title>Model Update: 2026-11-18</title>
       <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-11-18-080757</link>
@@ -349,13 +356,6 @@
       <description>&lt;ul&gt;&lt;li&gt;**GPT-4.1**: Release status changed from 'GA' to 'Closing down 2026-06-01'&lt;/li&gt;&lt;li&gt;**GPT-5.2**: Release status changed from 'GA' to 'Closing down 2026-06-01'&lt;/li&gt;&lt;li&gt;**GPT-5.2-Codex**: Release status changed from 'GA' to 'Closing down 2026-06-01'&lt;/li&gt;&lt;/ul&gt;</description>
       <pubDate>Tue, 12 May 2026 08:59:44 GMT</pubDate>
       <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-12-085944</guid>
-    </item>
-    <item>
-      <title>Model Update: 2026-05-07</title>
-      <link>https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-07-085601</link>
-      <description>&lt;ul&gt;&lt;li&gt;**Model removed**: Claude Sonnet 4&lt;/li&gt;&lt;/ul&gt;</description>
-      <pubDate>Thu, 07 May 2026 08:56:01 GMT</pubDate>
-      <guid isPermaLink="true">https://github.com/rajbos/github-copilot-model-notifier/releases/tag/models-2026-05-07-085601</guid>
     </item>
   </channel>
 </rss>

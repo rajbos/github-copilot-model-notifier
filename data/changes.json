@@ -679,5 +679,14 @@
       "**New model added**: MAI Code 2, Pricing: $0.5 in / $2.5 out per 1M tokens",
       "**New model added**: MAI Code 2 Flash, Pricing: $0.05 in / $0.25 out per 1M tokens"
     ]
+  },
+  {
+    "date": "2026-11-19 08:07 UTC",
+    "pub_date": "Thu, 19 Nov 2026 08:07:55 GMT",
+    "title": "Model Update: 2026-11-19",
+    "tag": "models-2026-11-19-080755",
+    "items": [
+      "**New model added**: Gemini 4 Neon (Provider: Google)"
+    ]
   }
 ]
