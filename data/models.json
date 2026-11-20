@@ -468,7 +468,14 @@
     "provider": "Google",
     "release_status": "GA",
     "multiplier_paid": "",
-    "multiplier_free": ""
+    "multiplier_free": "",
+    "pricing": {
+      "releaseStatus": "GA",
+      "category": "Versatile",
+      "inputCostPerMillion": 3.0,
+      "cachedInputCostPerMillion": 0.15,
+      "outputCostPerMillion": 15.0
+    }
   },
   "Grok 4.5": {
     "name": "Grok 4.5",

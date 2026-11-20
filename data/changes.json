@@ -688,5 +688,14 @@
     "items": [
       "**New model added**: Gemini 4 Neon (Provider: Google)"
     ]
+  },
+  {
+    "date": "2026-11-20 08:07 UTC",
+    "pub_date": "Fri, 20 Nov 2026 08:07:53 GMT",
+    "title": "Model Update: 2026-11-20",
+    "tag": "models-2026-11-20-080753",
+    "items": [
+      "**Gemini 4 Neon**: Pricing added: $3 in / $15 out per 1M tokens"
+    ]
   }
 ]
